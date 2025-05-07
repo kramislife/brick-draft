@@ -1,13 +1,13 @@
-import React from 'react'
-import { Button } from './components/ui/button'
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import UserRoutes from "@/components/routes/UserRoutes";
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-3xl font-bold underline'>Hello World</h1>
-      <Button variant="destructive">Click me</Button>
-    </div>
-  )
-}
+    <BrowserRouter>
+      <UserRoutes />
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
