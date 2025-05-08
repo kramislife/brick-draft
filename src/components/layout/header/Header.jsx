@@ -4,7 +4,7 @@ import { Moon, Sun, User, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import MobileMenu from "@/components/layout/header/MobileMenu";
-import { publicNavLinks } from "@/components/constant/publicNavigation";
+import { publicNavLinks } from "@/components/constant/userNavigation";
 import { useThemeToggle } from "@/components/hooks/toggleTheme";
 
 // Icon button component
@@ -23,7 +23,7 @@ const IconButton = ({
     onClick={onClick}
     aria-label={label}
     title={title}
-    className={`hover:cursor-pointer ${className}`}
+    className={className}
     asChild={asChild}
   >
     {icon}
@@ -34,24 +34,23 @@ const Header = () => {
   const { darkMode, toggleDarkMode } = useThemeToggle();
 
   return (
-    <div className="sticky top-0 z-50 w-full border-b border-border backdrop-blur">
+    <header className="bg-foreground text-background dark:bg-background dark:text-foreground sticky top-0 z-50 w-full border-b border-border font-['Bangers'] tracking-widest">
       <div className="p-5 flex justify-between items-center">
-        <NavLink to="/" className="text-2xl font-bold">
-          <span className="text-foreground">Brick</span>{" "}
-          <span className="text-accent">Draft</span>
+        <NavLink to="/" className="font-bold text-3xl">
+          Brick <span className="text-accent">Draft</span>
         </NavLink>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-15 text-xl">
           {publicNavLinks.map((link) => {
             return (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `transition-colors flex items-center gap-2 ${
+                  `relative transition-colors flex items-center gap-2 ${
                     isActive
-                      ? "text-accent"
-                      : "text-foreground dark:hover:text-accent"
+                      ? "text-accent after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent"
+                      : "hover:text-accent dark:text-foreground dark:hover:text-accent after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-0.5 after:bg-accent after:transition-all hover:after:w-full hover:after:left-0"
                   }`
                 }
               >
@@ -99,7 +98,7 @@ const Header = () => {
           </Sheet>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

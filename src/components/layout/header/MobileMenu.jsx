@@ -6,18 +6,24 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
+  SheetFooter,
 } from "@/components/ui/sheet";
+import { User } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const MobileMenu = ({ navLinks }) => {
   return (
-    <SheetContent side="right">
+    <SheetContent
+      side="right"
+      className="bg-foreground dark:bg-background border-none font-['Bangers'] tracking-widest"
+    >
       <SheetHeader>
         <SheetTitle className="text-left sr-only">Menu</SheetTitle>
         <SheetDescription className="sr-only">
           This is a mobile menu
         </SheetDescription>
       </SheetHeader>
-      <nav className="flex flex-col gap-3 mt-10">
+      <nav className="flex flex-col gap-3 mt-12">
         {navLinks.map((link) => {
           const Icon = link.icon;
           return (
@@ -25,10 +31,10 @@ const MobileMenu = ({ navLinks }) => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `text-base transition-colors p-2 rounded-md flex items-center gap-3 ${
+                `text-xl transition-colors px-5 py-2 rounded-md flex items-center ${
                   isActive
-                    ? "dark:text-accent-foreground bg-accent"
-                    : "hover:bg-muted"
+                    ? "text-accent-foreground bg-accent"
+                    : "text-background hover:bg-accent hover:text-accent-foreground dark:text-foreground dark:hover:text-accent-foreground"
                 }`
               }
             >
@@ -42,6 +48,17 @@ const MobileMenu = ({ navLinks }) => {
           );
         })}
       </nav>
+
+      <SheetFooter className="px-0">
+        <NavLink to="/login" className="w-full">
+          <SheetClose asChild>
+            <Button variant="accent" size="lg" className="w-full">
+              <User />
+              <span>Login</span>
+            </Button>
+          </SheetClose>
+        </NavLink>
+      </SheetFooter>
     </SheetContent>
   );
 };

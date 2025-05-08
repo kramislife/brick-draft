@@ -7,6 +7,10 @@ import About from "@/components/pages/About";
 import Contact from "@/components/pages/Contact";
 import History from "@/components/pages/History";
 import Login from "@/components/pages/auth/Login";
+import TermsofUse from "@/components/layout/footer/TermsofUse";
+import PrivacyPolicy from "@/components/layout/footer/PrivacyPolicy";
+import Register from "@/components/pages/auth/Register";
+import Profile from "@/components/pages/auth/Profile";
 
 const UserRoutes = () => {
   return (
@@ -17,12 +21,15 @@ const UserRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/history" element={<History />} />
+        <Route path="/terms" element={<TermsofUse />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoutes />}>
           <Route path="/dashboard" element={<div>Dashboard Page</div>} />
-          <Route path="/profile" element={<div>Profile Page</div>} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Route>
     </Routes>
