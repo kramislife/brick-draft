@@ -11,7 +11,7 @@ import TermsofUse from "@/components/layout/footer/TermsofUse";
 import PrivacyPolicy from "@/components/layout/footer/PrivacyPolicy";
 import Register from "@/components/pages/auth/Register";
 import Profile from "@/components/pages/auth/Profile";
-
+import ForgotPassword from "@/components/pages/auth/ForgotPassword";
 const UserRoutes = () => {
   return (
     <Routes>
@@ -25,7 +25,7 @@ const UserRoutes = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         {/* Protected Routes */}
         <Route element={<ProtectedRoutes />}>
           <Route path="/dashboard" element={<div>Dashboard Page</div>} />

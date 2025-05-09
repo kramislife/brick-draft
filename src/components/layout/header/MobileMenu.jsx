@@ -8,8 +8,10 @@ import {
   SheetTitle,
   SheetFooter,
 } from "@/components/ui/sheet";
-import { User } from "lucide-react";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { User } from "lucide-react";
+import AuthDialog from "@/components/pages/auth/AuthDialog";
 
 const MobileMenu = ({ navLinks }) => {
   return (
@@ -50,14 +52,15 @@ const MobileMenu = ({ navLinks }) => {
       </nav>
 
       <SheetFooter className="px-0">
-        <NavLink to="/login" className="w-full">
-          <SheetClose asChild>
+        <Dialog>
+          <DialogTrigger asChild>
             <Button variant="accent" size="lg" className="w-full">
               <User />
-              <span>Login</span>
+              <span>Sign In</span>
             </Button>
-          </SheetClose>
-        </NavLink>
+          </DialogTrigger>
+          <AuthDialog />
+        </Dialog>
       </SheetFooter>
     </SheetContent>
   );

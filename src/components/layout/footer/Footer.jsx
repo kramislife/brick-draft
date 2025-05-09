@@ -9,7 +9,7 @@ import {
 
 const FooterSection = ({ title, children }) => (
   <div>
-    <h2 className="font-['Bangers'] text-2xl tracking-wide border-b-2 border-foreground dark:border-accent pb-2 mb-4 w-max">
+    <h2 className="font-['Bangers'] text-2xl tracking-wide border-b-2 border-foreground dark:border-accent mb-5 w-max">
       {title}
     </h2>
     {children}
@@ -17,7 +17,7 @@ const FooterSection = ({ title, children }) => (
 );
 
 const NavLinks = ({ links }) => (
-  <nav className="flex flex-col space-y-2">
+  <nav className="flex flex-col space-y-5">
     {links.map((link) => (
       <Link
         key={link.path}
@@ -31,7 +31,7 @@ const NavLinks = ({ links }) => (
 );
 
 const SupportLinks = ({ items }) => (
-  <div className="flex flex-col space-y-2">
+  <div className="flex flex-col space-y-5">
     {items.map((item, index) => {
       if (item.type === "routerLink") {
         return (
@@ -66,7 +66,7 @@ const SupportLinks = ({ items }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-accent text-foreground dark:bg-background p-5 border-t dark:border-border">
+    <footer className="bg-accent text-foreground dark:bg-primary p-5">
       <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-10">
         <FooterSection title="Account">
           <NavLinks links={accountLinks} />
@@ -95,7 +95,7 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-foreground text-background dark:bg-primary dark:text-accent hover:text-accent dark:hover:text-foreground p-3 rounded-full transition-colors duration-300"
+                  className="bg-foreground text-background dark:bg-muted-foreground/10 dark:text-accent hover:text-accent dark:hover:text-foreground p-3 rounded-full transition-colors duration-300"
                   aria-label={ariaLabel}
                 >
                   <Icon size={20} />

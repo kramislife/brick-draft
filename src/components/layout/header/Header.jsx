@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Moon, Sun, User, Menu } from "lucide-react";
+import { Moon, Sun, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import MobileMenu from "@/components/layout/header/MobileMenu";
+import AuthDialog from "@/components/pages/auth/AuthDialog";
 import { publicNavLinks } from "@/components/constant/userNavigation";
 import { useThemeToggle } from "@/components/hooks/toggleTheme";
 
@@ -40,7 +42,7 @@ const Header = () => {
           Brick <span className="text-accent">Draft</span>
         </NavLink>
 
-        <nav className="hidden md:flex items-center gap-15 text-xl">
+        <nav className="hidden md:flex items-center gap-10 md:text-lg lg:gap-15 lg:text-xl">
           {publicNavLinks.map((link) => {
             return (
               <NavLink
@@ -66,23 +68,18 @@ const Header = () => {
             icon={darkMode ? <Sun /> : <Moon />}
             onClick={toggleDarkMode}
             label="Toggle dark mode"
-            title={darkMode ? "Toggle dark mode" : "Toggle light mode"}
+            title={darkMode ? "Toggle light mode" : "Toggle dark mode"}
           />
 
           {/* Desktop Sign In */}
-          <NavLink to="/login">
-            <Button
-              className="hover:cursor-pointer hidden md:flex"
-              variant="accent"
-            >
-              Sign In
-            </Button>
-          </NavLink>
-
-          {/* Mobile Sign In */}
-          <NavLink to="/login" className="md:hidden">
-            <IconButton icon={<User />} label="Sign In" title="Sign In" />
-          </NavLink>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="hidden md:flex" variant="accent">
+                Sign In
+              </Button>
+            </DialogTrigger>
+            <AuthDialog />
+          </Dialog>
 
           {/* Mobile Menu */}
           <Sheet>
