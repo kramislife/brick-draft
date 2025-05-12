@@ -11,7 +11,7 @@ import {
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { User } from "lucide-react";
-import AuthDialog from "@/components/pages/auth/AuthDialog";
+import AuthDialog from "@/pages/auth/AuthDialog";
 
 const MobileMenu = ({ navLinks }) => {
   return (

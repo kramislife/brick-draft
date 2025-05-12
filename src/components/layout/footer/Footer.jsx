@@ -5,7 +5,7 @@ import {
   accountLinks,
   supportInfo,
   socialLinks,
-} from "@/components/constant/userNavigation";
+} from "@/constant/userNavigation";
 
 const FooterSection = ({ title, children }) => (
   <div>

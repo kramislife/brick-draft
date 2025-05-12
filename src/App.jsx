@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import UserRoutes from "@/components/routes/UserRoutes";
+import UserRoutes from "@/routes/UserRoutes";
 
 const App = () => {
   return (

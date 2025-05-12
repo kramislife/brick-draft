@@ -7,8 +7,8 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LogIn, UserPlus } from "lucide-react";
-import Login from "@/components/pages/auth/Login";
-import Register from "@/components/pages/auth/Register";
+import Login from "@/pages/auth/Login";
+import Register from "@/pages/auth/Register";
 
 const authTabs = [
   {
@@ -38,7 +38,11 @@ const AuthDialog = () => {
       <Tabs defaultValue="login" className="w-full">
         <TabsList className="grid w-full grid-cols-2 mb-3">
           {authTabs.map(({ value, label, icon }) => (
-            <TabsTrigger key={value} value={value} className="flex items-center gap-2">
+            <TabsTrigger
+              key={value}
+              value={value}
+              className="flex items-center gap-2"
+            >
               {icon}
               <span>{label}</span>
             </TabsTrigger>

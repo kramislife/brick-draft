@@ -1,17 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import RootLayout from "@/components/routes/RootLayout";
-import ProtectedRoutes from "@/components/routes/ProtectedRoutes";
-import Home from "@/components/pages/Home";
-import About from "@/components/pages/About";
-import Contact from "@/components/pages/Contact";
-import History from "@/components/pages/History";
-import Login from "@/components/pages/auth/Login";
+import RootLayout from "@/routes/RootLayout";
+import ProtectedRoutes from "@/routes/ProtectedRoutes";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import History from "@/pages/History";
+import Login from "@/pages/auth/Login";
 import TermsofUse from "@/components/layout/footer/TermsofUse";
 import PrivacyPolicy from "@/components/layout/footer/PrivacyPolicy";
-import Register from "@/components/pages/auth/Register";
-import Profile from "@/components/pages/auth/Profile";
-import ForgotPassword from "@/components/pages/auth/ForgotPassword";
+import Register from "@/pages/auth/Register";
+import Profile from "@/pages/auth/Profile";
+import ForgotPassword from "@/pages/auth/ForgotPassword";
 const UserRoutes = () => {
   return (
     <Routes>
