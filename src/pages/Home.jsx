@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import AnnouncementBar from "@/components/home/AnnouncementBar";
 
 const Home = () => {
   return (
-    <div>
-      <h1>This is Home Page</h1>
-    </div>
-  )
-}
+    <>
+      <AnnouncementBar />
+    </>
+  );
+};
 
 export default Home;
