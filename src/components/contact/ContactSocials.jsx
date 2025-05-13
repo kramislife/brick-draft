@@ -1,26 +1,8 @@
 import React from "react";
-import { Facebook, Instagram, Mail } from "lucide-react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { socialLinks } from "@/constant/userNavigation";
 
 const ContactSocials = () => {
-  const socialLinks = [
-    {
-      icon: Facebook,
-      label: "Facebook",
-      href: "https://www.facebook.com/theworldofminifigs/",
-    },
-    {
-      icon: Instagram,
-      label: "Instagram",
-      href: "https://www.instagram.com/theworldofminifigs/",
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      href: "mailto:brickextremeofficial@gmail.com",
-    },
-  ];
-
   return (
     <Card>
       <CardHeader className="text-xl font-semibold">
@@ -44,7 +26,7 @@ const ContactSocials = () => {
                 <div className="p-2 rounded-md group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                   <Icon className="w-5 h-5" />
                 </div>
-                <span className="text-sm font-medium">{link.label}</span>
+                <span className="text-sm font-medium">{link.name}</span>
               </a>
             );
           })}

@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
+import { Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Send } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
@@ -63,12 +63,7 @@ const ContactFormSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {formFields.map((field) => (
                 <div key={field.id} className={`space-y-2 ${field.gridSpan}`}>
-                  <Label htmlFor={field.id}>
-                    {field.label}
-                    {field.required && (
-                      <span className="text-accent ml-1">*</span>
-                    )}
-                  </Label>
+                  <Label htmlFor={field.id}>{field.label}</Label>
                   <Input
                     id={field.id}
                     type={field.type}
@@ -81,12 +76,7 @@ const ContactFormSection = () => {
 
             {/* Message Field */}
             <div className="space-y-2">
-              <Label htmlFor={messageField.id}>
-                {messageField.label}
-                {messageField.required && (
-                  <span className="text-accent ml-1">*</span>
-                )}
-              </Label>
+              <Label htmlFor={messageField.id}>{messageField.label}</Label>
               <Textarea
                 id={messageField.id}
                 placeholder={messageField.placeholder}

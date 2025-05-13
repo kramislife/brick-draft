@@ -43,16 +43,6 @@ const SupportLinks = ({ items }) => (
             <span>{item.text}</span>
           </Link>
         );
-      } else if (item.type === "externalLink") {
-        return (
-          <a
-            key={index}
-            href={item.href}
-            className="hover:text-background dark:hover:text-accent transition-colors duration-300 flex items-center gap-2"
-          >
-            <span>{item.text}</span>
-          </a>
-        );
       } else {
         return (
           <p key={index} className="flex items-center gap-2">
@@ -85,8 +75,8 @@ const Footer = () => {
         <div className="col-span-2 md:col-span-1">
           <FooterSection title="Brick Draft">
             <p className="text-sm leading-6 mb-4">
-              Follow us on social media to stay updated on new releases,
-              exclusive promotions, and our latest collections.
+              Connect with us for updates on new releases and promotions, or
+              reach out via email for any inquiries or support needs.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map(({ icon: Icon, href, ariaLabel }, index) => (

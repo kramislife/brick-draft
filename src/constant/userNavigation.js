@@ -73,12 +73,6 @@ export const supportInfo = [
     type: "text",
     icon: MapPin,
   },
-  {
-    text: "brickextremeofficial@gmail.com",
-    type: "externalLink",
-    href: "mailto:brickextremeofficial@gmail.com",
-    icon: Mail,
-  },
 ];
 
 export const socialLinks = [
@@ -93,5 +87,11 @@ export const socialLinks = [
     icon: Instagram,
     href: "https://www.instagram.com/theworldofminifigs/",
     ariaLabel: "Follow us on Instagram",
+  },
+  {
+    name: "Email",
+    icon: Mail,
+    href: "mailto:brickextremeofficial@gmail.com",
+    ariaLabel: "Send us an email",
   },
 ];

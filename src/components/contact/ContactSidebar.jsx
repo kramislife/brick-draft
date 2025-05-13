@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
-import ContactSocials from "./ContactSocials";
-import ContactFaq from "./ContactFaq";
+import ContactSocials from "@/components/contact/ContactSocials";
+import ContactFaq from "@/components/contact/ContactFaq";
 
 const ContactSidebar = () => {
   return (
