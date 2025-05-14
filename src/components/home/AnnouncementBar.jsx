@@ -50,10 +50,8 @@ export default function AnnouncementBar() {
   const showTimer = announcement.hasSale && timeLeft;
 
   return (
-    <div
-      className={`transition-colors duration-500 px-5 ${announcement.color}`}
-    >
-      <div className="flex items-center justify-center h-10 font-[Inter] text-white text-sm font-medium">
+    <div className="bg-accent transition-colors duration-500 px-5">
+      <div className="flex items-center justify-center h-10 font-[Inter] text-black text-sm font-medium">
         <div
           className={`transition-opacity duration-500 ${
             isAnimating ? "opacity-0" : "opacity-100"
@@ -68,7 +66,7 @@ export default function AnnouncementBar() {
                     <div key={index} className="flex items-center">
                       <Button
                         variant="ghost"
-                        className={`bg-white/30 rounded ${
+                        className={`bg-white/50 rounded ${
                           index === 2 ? "animate-pulse" : ""
                         }`}
                         size="timer"
