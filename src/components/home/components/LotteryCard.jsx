@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Clock, Puzzle, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import LotteryDialogParts from "@/pages/LotteryDialogParts";
 
-const LotteryCard = ({ set }) => {
+const LotteryCard = ({ set, PARTS }) => {
   return (
     <Card className="group hover:shadow-lg transition-shadow dark:border-none rounded-xl overflow-hidden p-0 gap-2">
       <div className="relative aspect-square border-b">
@@ -53,9 +55,16 @@ const LotteryCard = ({ set }) => {
       </CardContent>
 
       <CardFooter className="p-2 grid grid-cols-2 gap-2">
-        <Button variant="brand">
-          <Link to={`/lottery/${set.id}/details`}>View Parts</Link>
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="brand">View Parts</Button>
+          </DialogTrigger>
+          <LotteryDialogParts
+            parts={set.parts}
+            setName={set.name}
+            PARTS={PARTS}
+          />
+        </Dialog>
         <Button variant="accent">
           <Link to={`/lottery/${set.id}`}>Buy Ticket</Link>
         </Button>

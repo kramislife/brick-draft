@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LotteryCard from "@/components/home/components/LotteryCard";
 import LotterySort from "@/components/home/components/LotterySort";
-import { lotteryData } from "@/constant/data";
+import { lotteryData, PARTS } from "@/constant/data";
 
 export const SORT_OPTIONS = {
   FEATURED: "Featured",
@@ -74,7 +74,7 @@ const LotteryGrid = ({ title, showViewAll = false, limit }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {sortedData.map((set) => (
-          <LotteryCard key={set.id} set={set} />
+          <LotteryCard key={set.id} set={set} PARTS={PARTS} />
         ))}
       </div>
     </section>
