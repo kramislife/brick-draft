@@ -12,6 +12,7 @@ import PrivacyPolicy from "@/components/layout/footer/PrivacyPolicy";
 import Register from "@/pages/auth/Register";
 import Profile from "@/pages/auth/Profile";
 import ForgotPassword from "@/pages/auth/ForgotPassword";
+import FeaturedAll from "@/pages/FeaturedAll";
 const UserRoutes = () => {
   return (
     <Routes>
@@ -26,6 +27,7 @@ const UserRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/featured-all" element={<FeaturedAll />} />
         {/* Protected Routes */}
         <Route element={<ProtectedRoutes />}>
           <Route path="/dashboard" element={<div>Dashboard Page</div>} />
