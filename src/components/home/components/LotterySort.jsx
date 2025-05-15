@@ -11,9 +11,9 @@ import { SORT_OPTIONS } from "@/components/home/components/LotteryGrid";
 const LotterySort = ({ sortBy, onSortChange }) => {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm">Sort by:</span>
+      <span className="text-sm hidden sm:block">Sort by:</span>
       <Select value={sortBy} onValueChange={onSortChange}>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className=" sm:w-[180px]">
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
         <SelectContent>

@@ -54,8 +54,8 @@ const LotteryGrid = ({ title, showViewAll = false, limit }) => {
   return (
     <section className="py-10 px-5">
       <div className="flex justify-between items-center mb-5">
-        <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
-        <div className="flex items-center gap-2">
+        <h2 className="text-xl md:text-2xl font-bold">{title}</h2>
+        <div className="flex items-center">
           <LotterySort sortBy={sortBy} onSortChange={setSortBy} />
           {showViewAll && hasMoreSets && (
             <Button
