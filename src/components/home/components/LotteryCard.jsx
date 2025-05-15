@@ -5,7 +5,7 @@ import { Clock, Puzzle, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
-const FeaturedCard = ({ set }) => {
+const LotteryCard = ({ set }) => {
   return (
     <Card className="group hover:shadow-lg transition-shadow dark:border-none rounded-xl overflow-hidden p-0 gap-2">
       <div className="relative aspect-square border-b">
@@ -64,4 +64,4 @@ const FeaturedCard = ({ set }) => {
   );
 };
 
-export default FeaturedCard;
+export default LotteryCard;

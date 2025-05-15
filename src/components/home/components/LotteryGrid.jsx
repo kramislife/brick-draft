@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import FeaturedCard from "@/components/home/components/FeaturedCard";
-import FeaturedSort from "@/components/home/components/FeaturedSort";
+import LotteryCard from "@/components/home/components/LotteryCard";
+import LotterySort from "@/components/home/components/LotterySort";
 import { lotteryData } from "@/constant/data";
 
 export const SORT_OPTIONS = {
@@ -15,7 +15,7 @@ export const SORT_OPTIONS = {
   PRICE_HIGH_LOW: "Price: High to Low",
 };
 
-const FeaturedGrid = ({ title, showViewAll = false, limit }) => {
+const LotteryGrid = ({ title, showViewAll = false, limit }) => {
   const [sortBy, setSortBy] = useState(SORT_OPTIONS.FEATURED);
 
   // First, get the initial featured-sorted data
@@ -56,14 +56,14 @@ const FeaturedGrid = ({ title, showViewAll = false, limit }) => {
       <div className="flex justify-between items-center mb-5">
         <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
         <div className="flex items-center gap-2">
-          <FeaturedSort sortBy={sortBy} onSortChange={setSortBy} />
+          <LotterySort sortBy={sortBy} onSortChange={setSortBy} />
           {showViewAll && hasMoreSets && (
             <Button
               asChild
               variant="link"
               className="gap-1 inline-flex items-center [&_svg:not([class*='size-'])]:size-4 hover:text-accent hover:no-underline"
             >
-              <Link to="/featured-all">
+              <Link to="/lottery/all">
                 View All
                 <ArrowRight />
               </Link>
@@ -74,11 +74,11 @@ const FeaturedGrid = ({ title, showViewAll = false, limit }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {sortedData.map((set) => (
-          <FeaturedCard key={set.id} set={set} />
+          <LotteryCard key={set.id} set={set} />
         ))}
       </div>
     </section>
   );
 };
 
-export default FeaturedGrid;
+export default LotteryGrid;
