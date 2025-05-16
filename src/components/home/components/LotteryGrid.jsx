@@ -4,10 +4,10 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LotteryCard from "@/components/home/components/LotteryCard";
 import LotterySort from "@/components/home/components/LotterySort";
-import { lotteryData, PARTS } from "@/constant/data";
+import { lotteryData, PARTS, FEATURES } from "@/constant/data";
 
 export const SORT_OPTIONS = {
-  FEATURED: "Featured",
+  ...FEATURES,
   ENDING_SOON: "Ending Soon",
   DRAW_DATE: "Draw Date",
   NEWLY_ADDED: "Newly Added",
@@ -20,7 +20,9 @@ const LotteryGrid = ({ title, showViewAll = false, limit }) => {
 
   // First, get the initial featured-sorted data
   const initialSortedData = [...lotteryData].sort(
-    (a, b) => b.features.includes("Featured") - a.features.includes("Featured")
+    (a, b) =>
+      b.features.includes(FEATURES.FEATURED) -
+      a.features.includes(FEATURES.FEATURED)
   );
 
   // If there's a limit, get the top N items first
@@ -30,6 +32,12 @@ const LotteryGrid = ({ title, showViewAll = false, limit }) => {
 
   // Then apply the selected sorting to the limited or full dataset
   const sortedData = [...limitedData].sort((a, b) => {
+    // Check if sorting by a feature
+    if (Object.values(FEATURES).includes(sortBy)) {
+      return b.features.includes(sortBy) - a.features.includes(sortBy);
+    }
+
+    // Other sorting options
     switch (sortBy) {
       case SORT_OPTIONS.ENDING_SOON:
         return new Date(a.drawDate) - new Date(b.drawDate);
@@ -41,10 +49,10 @@ const LotteryGrid = ({ title, showViewAll = false, limit }) => {
         return a.price - b.price;
       case SORT_OPTIONS.PRICE_HIGH_LOW:
         return b.price - a.price;
-      case SORT_OPTIONS.FEATURED:
       default:
         return (
-          b.features.includes("Featured") - a.features.includes("Featured")
+          b.features.includes(FEATURES.FEATURED) -
+          a.features.includes(FEATURES.FEATURED)
         );
     }
   });
@@ -72,7 +80,7 @@ const LotteryGrid = ({ title, showViewAll = false, limit }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {sortedData.map((set) => (
           <LotteryCard key={set.id} set={set} PARTS={PARTS} />
         ))}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AlarmClockCheck, Box, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Clock, Puzzle, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -17,21 +17,23 @@ const LotteryCard = ({ set, PARTS }) => {
           className="w-full h-full object-cover"
         />
         <div className="absolute top-4 left-4">
-          <Badge variant="brand">{set.theme}</Badge>
+          <Badge>{set.theme}</Badge>
         </div>
-        {set.features.includes("Featured") && (
-          <div className="absolute top-4 right-4">
-            <Badge variant="accent">Featured</Badge>
-          </div>
-        )}
+        <div className="absolute top-4 right-4">
+          {set.features.map((feature) => (
+            <Badge key={feature} variant="accent">
+              {feature}
+            </Badge>
+          ))}
+        </div>
       </div>
 
       <CardContent className="p-3 space-y-2">
-        <h3 className="text-xl font-semibold">{set.name}</h3>
+        <h3 className="text-xl font-semibold line-clamp-1">{set.name}</h3>
 
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-1 text-muted-foreground text-sm">
-            <Puzzle className="w-4 h-4" />
+            <Box className="w-4 h-4" />
             <span>{set.pieces} pieces</span>
           </div>
           <span className="text-emerald-500 font-bold text-lg">
@@ -40,7 +42,7 @@ const LotteryCard = ({ set, PARTS }) => {
         </div>
 
         <div className="flex items-center gap-2 text-muted-foreground text-sm">
-          <Clock className="w-4 h-4" />
+          <AlarmClockCheck className="w-4 h-4" />
           <span>
             {set.drawDate} at {set.drawTime}
           </span>
@@ -54,10 +56,10 @@ const LotteryCard = ({ set, PARTS }) => {
         </div>
       </CardContent>
 
-      <CardFooter className="p-2 grid grid-cols-2 gap-2">
+      <CardFooter className="px-2 pb-3 grid grid-cols-2 gap-2">
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant="brand">View Parts</Button>
+            <Button>View Parts</Button>
           </DialogTrigger>
           <LotteryDialogParts
             parts={set.parts}

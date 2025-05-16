@@ -153,13 +153,13 @@ const Banner = () => {
       </CarouselContent>
 
       {/* Dot Navigation */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3">
         {banners.map((_, index) => (
           <button
             key={index}
             className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
               index === current
-                ? "w-8 bg-accent"
+                ? "w-5 bg-accent"
                 : "w-2 bg-white/50 hover:bg-white/75"
             }`}
             onClick={() => api?.scrollTo(index)}

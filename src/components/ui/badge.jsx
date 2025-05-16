@@ -18,7 +18,6 @@ const badgeVariants = cva(
         outline:
           "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         accent: "bg-accent text-foreground dark:text-accent-foreground border-none", // Yellow color
-        brand: "bg-primary text-background dark:bg-background dark:text-foreground border-none",
       },
     },
     defaultVariants: {

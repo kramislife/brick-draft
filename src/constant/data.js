@@ -407,7 +407,7 @@ export const lotteryData = [
     },
   },
   {
-    id: "titanic",
+    id: "lego-titanic",
     name: "LEGO Titanic",
     description:
       "Authentic 1:200 scale model of the ill-fated ocean liner with incredible interior details.",
@@ -419,7 +419,7 @@ export const lotteryData = [
     slotsAvailable: 40,
     image:
       "https://m.media-amazon.com/images/I/61l9pB4kA+L._AC_UF1000,1000_QL80_.jpg",
-    features: [],
+    features: [FEATURES.LIMITED_EDITION],
     pieces: 9090,
     theme: THEMES.ICONS,
     dateAdded: "2025-05-15",
@@ -432,7 +432,7 @@ export const lotteryData = [
     },
   },
   {
-    id: "colosseum",
+    id: "roman-colosseum",
     name: "Roman Colosseum",
     description:
       "Recreate the mighty Colosseum with this detailed architectural model.",
@@ -444,7 +444,7 @@ export const lotteryData = [
     slotsAvailable: 15,
     image:
       "https://m.media-amazon.com/images/I/71fIlRTYRZL._AC_UF894,1000_QL80_.jpg",
-    features: [],
+    features: [FEATURES.BEST_SELLER],
     pieces: 9036,
     theme: THEMES.ARCHITECTURE,
     dateAdded: "2025-05-15",
@@ -467,7 +467,7 @@ export const lotteryData = [
     totalSlots: 90,
     slotsAvailable: 30,
     image: "https://m.media-amazon.com/images/I/717Ph4gd2tL._AC_SL1500_.jpg",
-    features: [],
+    features: [FEATURES.NEW_ARRIVAL],
     pieces: 10001,
     theme: THEMES.ICONS,
     dateAdded: "2025-05-15",
