@@ -6,10 +6,8 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import History from "@/pages/History";
-import Login from "@/pages/auth/Login";
 import TermsofUse from "@/components/layout/footer/TermsofUse";
 import PrivacyPolicy from "@/components/layout/footer/PrivacyPolicy";
-import Register from "@/pages/auth/Register";
 import Profile from "@/pages/auth/Profile";
 import ForgotPassword from "@/pages/auth/ForgotPassword";
 import LotteryAll from "@/pages/LotteryAll";
@@ -26,8 +24,6 @@ const UserRoutes = () => {
         <Route path="/history" element={<History />} />
         <Route path="/terms" element={<TermsofUse />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/lottery/all" element={<LotteryAll />} />
         <Route path="/lottery/:id" element={<LotteryDetails />} />
