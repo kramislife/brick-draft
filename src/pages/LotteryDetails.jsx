@@ -6,6 +6,7 @@ import LotteryStatsCards from "@/components/lottery-details/LotteryStatsCards";
 import LotteryPurchaseSection from "@/components/lottery-details/LotteryPurchaseSection";
 import { paymentMethod } from "@/constant/paymentMethod";
 import { lotteryData } from "@/constant/data";
+import PartItemCard from "@/components/home/components/PartItemCard";
 
 const LotteryDetails = () => {
   const { id } = useParams();
@@ -13,6 +14,9 @@ const LotteryDetails = () => {
   const [quantity, setQuantity] = useState(1);
 
   if (!set) return <div>Set not found</div>;
+
+  // Get all parts across all categories
+  const allParts = Object.values(set.parts).flat();
 
   return (
     <div className="p-5">
@@ -39,6 +43,16 @@ const LotteryDetails = () => {
             setQuantity={setQuantity}
             paymentMethod={paymentMethod}
           />
+        </div>
+      </div>
+
+      {/* Parts Section */}
+      <div className="mt-10 pt-5 border-t">
+        <h2 className="text-2xl font-bold mb-6">Genuine Parts</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {allParts.map((part) => (
+            <PartItemCard key={part.id} part={part} />
+          ))}
         </div>
       </div>
     </div>
