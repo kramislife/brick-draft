@@ -157,7 +157,7 @@ export const PARTS = {
   PLATES: "Plates",
   WINDOWS: "Windows",
   SPECIAL_PARTS: "Special Parts",
-  TECHNIC_PARTS: "Technic Parts", 
+  TECHNIC_PARTS: "Technic Parts",
   WHEELS: "Wheels",
   MINIFIGURES: "Minifigures",
 };
@@ -360,6 +360,11 @@ export const lotteryData = [
     name: "Cozy House",
     description:
       "A charming winter cabin with detailed interior and exterior features. Perfect for display or play.",
+    whyCollect: [
+      "Exclusive winter-themed design with unique snow-covered elements",
+      "Detailed interior furnishings add display value",
+      "Perfect starter set for architectural collections",
+    ],
     price: 10.99,
     marketPrice: 99,
     drawDate: "May 18, 2025",
@@ -385,6 +390,11 @@ export const lotteryData = [
     name: "Hogwarts Castle",
     description:
       "Detailed microscale model of the iconic Hogwarts School of Witchcraft and Wizardry.",
+    whyCollect: [
+      "Authentic recreation of the iconic wizarding school",
+      "Includes rare wizard minifigures and magical accessories",
+      "Highly detailed architectural elements from the Harry Potter series",
+    ],
     price: 2.99,
     marketPrice: 429,
     drawDate: "May 19, 2025",
@@ -411,6 +421,11 @@ export const lotteryData = [
     name: "LEGO Titanic",
     description:
       "Authentic 1:200 scale model of the ill-fated ocean liner with incredible interior details.",
+    whyCollect: [
+      "Detailed recreation of the iconic Titanic",
+      "Includes rare minifigures and authentic ship details",
+      "Perfect for maritime history enthusiasts",
+    ],
     price: 3.5,
     marketPrice: 679,
     drawDate: "May 20, 2025",
@@ -436,6 +451,11 @@ export const lotteryData = [
     name: "Roman Colosseum",
     description:
       "Recreate the mighty Colosseum with this detailed architectural model.",
+    whyCollect: [
+      "Detailed recreation of the iconic Colosseum",
+      "Includes rare architectural elements and historical details",
+      "Perfect for ancient history enthusiasts",
+    ],
     price: 2.5,
     marketPrice: 549,
     drawDate: "May 21, 2025",
@@ -460,6 +480,11 @@ export const lotteryData = [
     name: "Eiffel Tower",
     description:
       "Build the iconic Parisian landmark in stunning detail with this towering set.",
+    whyCollect: [
+      "Stunning architectural masterpiece with intricate details",
+      "Includes rare minifigures and iconic Parisian elements",
+      "Perfect for cityscape enthusiasts",
+    ],
     price: 3.99,
     marketPrice: 629,
     drawDate: "May 22, 2025",
@@ -483,6 +508,11 @@ export const lotteryData = [
     name: "Super Mario Bowser's Castle",
     description:
       "Enter the world of Super Mario with this detailed recreation of Bowser's Castle.",
+    whyCollect: [
+      "Limited edition collectors item with rare pieces",
+      "Interactive play features and moving elements",
+      "Exclusive Bowser and character minifigures included",
+    ],
     price: 5.99,
     marketPrice: 399,
     drawDate: "May 23, 2025",
@@ -507,6 +537,11 @@ export const lotteryData = [
     name: "Technic Bugatti Chiron",
     description:
       "Advanced building set featuring the iconic supercar with working mechanics.",
+    whyCollect: [
+      "Highly detailed supercar model with working mechanics",
+      "Includes rare minifigures and authentic car details",
+      "Perfect for car enthusiasts",
+    ],
     price: 2.99,
     marketPrice: 349,
     drawDate: "May 24, 2025",
@@ -530,6 +565,11 @@ export const lotteryData = [
     name: "NASA Space Shuttle Discovery",
     description:
       "Authentic replica of the NASA Space Shuttle Discovery with Hubble Space Telescope.",
+    whyCollect: [
+      "Detailed recreation of the iconic Space Shuttle",
+      "Includes rare astronaut minifigure and space exploration details",
+      "Perfect for space enthusiasts",
+    ],
     price: 6.99,
     marketPrice: 199,
     drawDate: "May 25, 2025",
@@ -553,6 +593,11 @@ export const lotteryData = [
     name: "NINJAGO City Gardens",
     description:
       "Celebrate 10 years of NINJAGO with this detailed modular city set.",
+    whyCollect: [
+      "Celebrate 10 years of NINJAGO with this detailed modular city set.",
+      "Includes rare ninja minifigures and unique city elements",
+      "Perfect for NINJAGO enthusiasts",
+    ],
     price: 3.99,
     marketPrice: 299,
     drawDate: "May 26, 2025",
@@ -578,6 +623,11 @@ export const lotteryData = [
     name: "Disney Castle",
     description:
       "Magical Disney Castle inspired by Walt Disney World's Cinderella Castle.",
+    whyCollect: [
+      "Magical Disney Castle inspired by Walt Disney World's Cinderella Castle.",
+      "Includes rare Disney minifigures and iconic castle details",
+      "Perfect for Disney enthusiasts",
+    ],
     price: 4.99,
     marketPrice: 399,
     drawDate: "May 27, 2025",
@@ -603,6 +653,11 @@ export const lotteryData = [
     name: "Ghostbusters ECTO-1",
     description:
       "Detailed recreation of the iconic ghost-hunting vehicle from the Ghostbusters movies.",
+    whyCollect: [
+      "Detailed recreation of the iconic ghost-hunting vehicle from the Ghostbusters movies.",
+      "Includes rare ghostbusters minifigures and iconic vehicle details",
+      "Perfect for ghostbusters enthusiasts",
+    ],
     price: 2.99,
     marketPrice: 199,
     drawDate: "May 28, 2025",
@@ -627,6 +682,11 @@ export const lotteryData = [
     name: "Ideas Treehouse",
     description:
       "Sustainable treehouse set with interchangeable summer and autumn leaves.",
+    whyCollect: [
+      "Sustainable treehouse set with interchangeable summer and autumn leaves.",
+      "Includes rare treehouse minifigures and unique treehouse details",
+      "Perfect for treehouse enthusiasts",
+    ],
     price: 2.99,
     marketPrice: 199,
     drawDate: "May 29, 2025",
@@ -650,6 +710,11 @@ export const lotteryData = [
     name: "Creator Expert Bookshop",
     description:
       "Modular building featuring a quaint bookshop and adjoining townhouse.",
+    whyCollect: [
+      "Modular building featuring a quaint bookshop and adjoining townhouse.",
+      "Includes rare bookshop minifigures and unique bookshop details",
+      "Perfect for bookshop enthusiasts",
+    ],
     price: 3.99,
     marketPrice: 179,
     drawDate: "May 30, 2025",
@@ -675,6 +740,11 @@ export const lotteryData = [
     name: "Botanical Collection Orchid",
     description:
       "Elegant orchid plant that never needs watering, perfect for home decor.",
+    whyCollect: [
+      "Elegant orchid plant that never needs watering, perfect for home decor.",
+      "Includes rare orchid minifigures and unique orchid details",
+      "Perfect for orchid enthusiasts",
+    ],
     price: 4.99,
     marketPrice: 49,
     drawDate: "May 31, 2025",
@@ -698,6 +768,11 @@ export const lotteryData = [
     name: "Marvel Sanctum Sanctorum",
     description:
       "Doctor Strange's magical headquarters with scenes from the Marvel movies.",
+    whyCollect: [
+      "Doctor Strange's magical headquarters with scenes from the Marvel movies.",
+      "Includes rare Marvel minifigures and unique headquarters details",
+      "Perfect for Marvel enthusiasts",
+    ],
     price: 3.99,
     marketPrice: 249,
     drawDate: "June 1, 2025",
@@ -723,6 +798,11 @@ export const lotteryData = [
     name: "Marvel Iron Man Lab",
     description:
       "Tony Stark's high-tech lab filled with iconic suits and gear from Iron Man's legacy.",
+    whyCollect: [
+      "Tony Stark's high-tech lab filled with iconic suits and gear from Iron Man's legacy.",
+      "Includes rare Iron Man minifigures and unique lab details",
+      "Perfect for Iron Man enthusiasts",
+    ],
     price: 4.49,
     marketPrice: 299,
     drawDate: "June 2, 2025",
@@ -747,6 +827,11 @@ export const lotteryData = [
     name: "Marvel Wakanda Throne Room",
     description:
       "Recreate the royal heart of Wakanda with T'Challa, Shuri, and Dora Milaje.",
+    whyCollect: [
+      "Recreate the royal heart of Wakanda with T'Challa, Shuri, and Dora Milaje.",
+      "Includes rare Marvel minifigures and unique throne room details",
+      "Perfect for Marvel enthusiasts",
+    ],
     price: 3.75,
     marketPrice: 215,
     drawDate: "June 3, 2025",
@@ -771,6 +856,11 @@ export const lotteryData = [
     name: "Marvel Avengers Tower",
     description:
       "The iconic Avengers HQ filled with action scenes and legendary heroes.",
+    whyCollect: [
+      "The iconic Avengers HQ filled with action scenes and legendary heroes.",
+      "Includes rare Avengers minifigures and unique tower details",
+      "Perfect for Avengers enthusiasts",
+    ],
     price: 5.25,
     marketPrice: 399,
     drawDate: "June 5, 2025",
@@ -796,6 +886,11 @@ export const lotteryData = [
     name: "Marvel Guardians' Ship",
     description:
       "Join Star-Lord and the Guardians of the Galaxy on their interstellar adventures.",
+    whyCollect: [
+      "Join Star-Lord and the Guardians of the Galaxy on their interstellar adventures.",
+      "Includes rare Guardians of the Galaxy minifigures and unique ship details",
+      "Perfect for Guardians of the Galaxy enthusiasts",
+    ],
     price: 3.49,
     marketPrice: 231,
     drawDate: "June 6, 2025",

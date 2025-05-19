@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AlarmClockCheck, Box, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,13 +8,22 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import LotteryDialogParts from "@/pages/LotteryDialogParts";
 
 const LotteryCard = ({ set, PARTS }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/lottery/${set.id}`);
+  };
+
   return (
-    <Card className="group hover:shadow-lg transition-shadow dark:border-none rounded-xl overflow-hidden p-0 gap-2">
-      <div className="relative aspect-square border-b">
+    <Card
+      className="group hover:shadow-lg transition-shadow dark:border-none rounded-xl overflow-hidden p-0 gap-2 cursor-pointer"
+      onClick={handleCardClick}
+    >
+      <div className="relative aspect-square border-b overflow-hidden">
         <img
           src={set.image}
           alt={set.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute top-4 left-4">
           <Badge>{set.theme}</Badge>
@@ -59,7 +68,7 @@ const LotteryCard = ({ set, PARTS }) => {
       <CardFooter className="px-2 pb-3 grid grid-cols-2 gap-2">
         <Dialog>
           <DialogTrigger asChild>
-            <Button>View Parts</Button>
+            <Button onClick={(e) => e.stopPropagation()}>View Parts</Button>
           </DialogTrigger>
           <LotteryDialogParts
             parts={set.parts}
@@ -67,8 +76,14 @@ const LotteryCard = ({ set, PARTS }) => {
             PARTS={PARTS}
           />
         </Dialog>
-        <Button variant="accent">
-          <Link to={`/lottery/${set.id}`}>Buy Ticket</Link>
+        <Button
+          variant="accent"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/lottery/${set.id}`);
+          }}
+        >
+          Buy Ticket
         </Button>
       </CardFooter>
     </Card>
