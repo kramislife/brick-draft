@@ -15,21 +15,19 @@ const AboutChoose = () => {
   const features = [
     {
       icon: <DollarSign className="h-6 w-6" />,
-      title: "Affordability",
-      description:
-        "Own sets worth hundreds of dollars for just a few dollars — making the joy of building accessible to everyone.",
+      title: "Affordable LEGO® Items",
+      description: "Get the exact piece you want for a fraction of price!",
     },
     {
       icon: <ShieldCheck className="h-6 w-6" />,
-      title: "Authenticity",
-      description:
-        "All sets are 100% genuine, sourced directly from official LEGO stores and authorized retailers. No knockoffs, ever.",
+      title: "100% Authentic LEGO® Guaranteed",
+      description: "We only source all LEGO® items from authorized stores.",
     },
     {
       icon: <LineChart className="h-6 w-6" />,
-      title: "Transparency",
+      title: "New and Extremely Organized",
       description:
-        "We publicly share the number of tickets sold and announce all winners openly. Trust and honesty are at the core of everything we do.",
+        "Skip the long sorting hours with Brick Draft. All packed neatly so you can solely focus on building your dream LEGO® creations.",
     },
     {
       icon: <Truck className="h-6 w-6" />,
@@ -63,11 +61,11 @@ const AboutChoose = () => {
           WHY CHOOSE BRICK DRAFT
         </Badge>
         <h2 className="text-3xl font-bold mb-4">
-          Building Dreams, One Ticket at a Time 🏆
+          Love LEGO®? Win Specific Bricks Through Exciting Draws! 🏆
         </h2>
         <p className="max-w-4xl mx-auto italic leading-relaxed">
-          We envision a world where every LEGO enthusiast — young or old — has
-          the opportunity to own their dream sets without financial barriers.
+          Brick Draft is a platform created by LEGO® fans, for LEGO® fans,
+          making specific pieces more accessible.
         </p>
       </motion.div>
 

@@ -22,8 +22,8 @@ const UserRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/history" element={<History />} />
-        <Route path="/terms" element={<TermsofUse />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsofUse />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/lottery/all" element={<LotteryAll />} />
         <Route path="/lottery/:id" element={<LotteryDetails />} />

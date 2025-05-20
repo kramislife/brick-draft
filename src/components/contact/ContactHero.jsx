@@ -31,7 +31,7 @@ const ContactHero = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-6xl lg:leading-tight font-bold mb-5 leading-tight"
         >
-          Contact <span className="text-accent">Us</span> <br />
+          Get in <span className="text-accent">Touch</span>
         </motion.h1>
 
         <motion.div
@@ -41,8 +41,7 @@ const ContactHero = () => {
           className="relative mx-auto max-w-xl"
         >
           <p className="mx-auto text-sm md:text-base italic">
-            We're here to help with any questions about LEGO set drawings,
-            ticket purchases, or your account!
+            Have questions or suggestions? Contact Brick Draft through our form.
           </p>
         </motion.div>
       </div>

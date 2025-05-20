@@ -31,8 +31,9 @@ const AboutHero = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-6xl lg:leading-tight font-bold mb-5 leading-tight"
         >
-          Fueling Your <span className="text-accent">LEGO</span> <br />
-          Adventures with Authentic Parts
+          Stop Searching, Start <span className="text-accent">Building:</span>{" "}
+          <br />
+          Get the Exact LEGO® Bricks You Need!
         </motion.h1>
 
         <motion.div
@@ -42,8 +43,8 @@ const AboutHero = () => {
           className="relative mx-auto max-w-xl"
         >
           <p className="mx-auto text-sm md:text-base italic">
-            Brick by Brick, Uniting LEGO Lovers – Where Every Piece Connects and
-            Every Builder Belongs!
+            Tired of incomplete sets? Get the chance to pick individual LEGO®
+            items in the most exciting and FUN way!
           </p>
         </motion.div>
       </div>

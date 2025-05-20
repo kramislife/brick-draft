@@ -58,13 +58,13 @@ export const accountLinks = [
 export const supportInfo = [
   {
     text: "Terms Of Use",
-    path: "/terms",
+    path: "/terms-of-use",
     type: "routerLink",
     icon: FileText,
   },
   {
     text: "Privacy Policy",
-    path: "/privacy",
+    path: "/privacy-policy",
     type: "routerLink",
     icon: ShieldCheck,
   },

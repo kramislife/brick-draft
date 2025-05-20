@@ -6,39 +6,42 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Check } from "lucide-react";
 
 const ContactFaq = () => {
   const faqItems = [
     {
       question: "Where are you located?",
-      answer:
-        "We are based in [Your Location]. However, we operate primarily online to serve LEGO enthusiasts worldwide.",
+      answer: "We’re located in Lehi, Utah, 84043",
     },
     {
       question: "Do you have a physical store?",
       answer:
-        "No, we are an online-only platform specializing in LEGO set lottery draws.",
+        "We currently don’t have a physical store yet. All transactions were fulfilled online.",
     },
     {
-      question: "Are your LEGO parts authentic?",
-      answer:
-        "Yes, all our LEGO sets are 100% authentic, sourced directly from official LEGO stores and authorized retailers.",
+      question: "Where did you source your LEGO® products?",
+      answer: "We only source from official and authorized LEGO® stores.",
     },
     {
-      question: "How long does shipping take?",
+      question: "Are your LEGO® new and authentic?",
       answer:
-        "Shipping times vary by location. Winners typically receive their prizes within 5-7 business days.",
+        "Our products are guaranteed to be 100% LEGO®. You can check the reviews in our online shops for legitimacy.",
     },
     {
-      question:
-        "Can I request specific LEGO parts that are not listed on your website?",
+      question: "Is Brick Draft officially affiliated with LEGO?",
       answer:
-        "Currently, we focus on complete LEGO sets for our lottery draws. Special requests are not available at this time.",
+        "No, Brick Draft is an independent platform. We are not endorsed or sponsored by The LEGO Group.",
+    },
+    {
+      question: "How long does shipping take for the items I selected?",
+      answer:
+        "Shipping occurs within 1-3 business days after the draw concludes. Delivery times vary by location, typically ranging from 3-7 days within the U.S.",
     },
   ];
 
   return (
-    <Card>
+    <Card className="gap-3">
       <CardHeader className="text-xl font-semibold">
         Frequently Asked Questions
       </CardHeader>
@@ -47,7 +50,13 @@ const ContactFaq = () => {
           {faqItems.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger>{item.question}</AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionContent>
+                <div className="flex items-start gap-2">
+                  <Check size={17} className="text-green-500 shrink-0" />
+
+                  <span>{item.answer}</span>
+                </div>
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
