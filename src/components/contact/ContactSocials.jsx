@@ -2,13 +2,13 @@ import React from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { socialLinks } from "@/constant/userNavigation";
 
-const ContactSocials = () => {
+const ContactSocials = ({ data }) => {
   return (
     <Card>
       <CardHeader className="text-xl font-semibold">
-        Let's be connected!
+        {data.title}
         <p className="text-sm text-muted-foreground font-normal">
-          Connect with us online
+          {data.subtitle}
         </p>
       </CardHeader>
       <CardContent>

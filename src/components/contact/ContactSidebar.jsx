@@ -3,16 +3,12 @@ import { motion } from "motion/react";
 import ContactSocials from "@/components/contact/ContactSocials";
 import ContactFaq from "@/components/contact/ContactFaq";
 
-const ContactSidebar = () => {
+const ContactSidebar = ({ faqData, socialsData, animations }) => {
   return (
-    <motion.div
-      initial={{ x: 50, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <motion.div {...animations} className="lg:col-span-1">
       <div className="space-y-5">
-        <ContactSocials />
-        <ContactFaq />
+        <ContactSocials data={socialsData} />
+        <ContactFaq data={faqData} />
       </div>
     </motion.div>
   );
