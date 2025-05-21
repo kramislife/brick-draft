@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import MobileMenu from "@/components/layout/header/MobileMenu";
-import AuthDialog from "@/pages/AuthDialog";
+import AuthDialog from "@/pages/auth/AuthDialog";
 import { publicNavLinks } from "@/constant/userNavigation";
 import { useThemeToggle } from "@/hooks/toggleTheme";
 

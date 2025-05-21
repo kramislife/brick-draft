@@ -11,7 +11,7 @@ import {
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import AuthDialog from "@/pages/AuthDialog";
+import AuthDialog from "@/pages/auth/AuthDialog";
 import { useForgotPasswordMutation } from "@/redux/api/authApi";
 
 const ForgotPassword = () => {

@@ -25,7 +25,7 @@ const authTabs = [
   },
 ];
 
-const AuthDialog = () => {
+const AuthDialog = ({ defaultTab = "login" }) => {
   return (
     <DialogContent>
       <DialogHeader>
@@ -35,7 +35,7 @@ const AuthDialog = () => {
         <DialogDescription className="sr-only">Brick Draft</DialogDescription>
       </DialogHeader>
 
-      <Tabs defaultValue="login" className="w-full">
+      <Tabs defaultValue={defaultTab} className="w-full">
         <TabsList className="grid w-full grid-cols-2 mb-3">
           {authTabs.map(({ value, label, icon }) => (
             <TabsTrigger
