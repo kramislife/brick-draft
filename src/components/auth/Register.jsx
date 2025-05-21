@@ -31,17 +31,15 @@ const Register = () => {
     e.preventDefault();
 
     if (formData.newPassword !== formData.confirmPassword) {
-      toast.error(error.data?.message || "Passwords don't match", {
-        description:
-          error.data?.description || "Please make sure your passwords match.",
+      toast.error("Passwords don't match", {
+        description: "Please make sure your passwords match.",
       });
       return;
     }
 
     if (!formData.agreedToTerms) {
-      toast.error(error.data?.message || "Terms agreement required", {
+      toast.error("Terms agreement required", {
         description:
-          error.data?.description ||
           "You must agree to the Terms of Service and Privacy Policy.",
       });
       return;
