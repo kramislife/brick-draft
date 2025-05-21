@@ -108,7 +108,54 @@ export const listItemFadeIn = (index) => ({
   transition: { duration: 0.3, delay: index * 0.1 },
 });
 
-// Legal page specific animations
+// ----------------------------------------- Bundled Animations ------------------------------------------
+
+// About page animations
+export const aboutAnimations = {
+  page: fadeIn,
+  hero: {
+    titleAnimation: slideUp,
+    descriptionAnimation: {
+      ...slideUp,
+      transition: { duration: 0.8, delay: 0.2 },
+    },
+    circleAnimations: heroCircleAnimations,
+  },
+  story: {
+    imageAnimation: slideLeft,
+    contentAnimation: slideRight,
+    paragraphAnimation: (index) => staggered(slideUp, index, 0.2),
+  },
+  works: {
+    headerAnimation: sectionHeaderAnimation,
+    stepAnimation: (index) => cardGridAnimation(index, 3),
+    tipsHeaderAnimation: sectionHeaderAnimation,
+    tipAnimation: (index) => cardGridAnimation(index, 4),
+    numberAnimation: hoverScale,
+  },
+  choose: {
+    headerAnimation: sectionHeaderAnimation,
+    featureAnimation: featureAnimation,
+    iconAnimation: hoverRotate,
+  },
+};
+
+// Contact page animations
+export const contactAnimations = {
+  page: fadeIn,
+  hero: {
+    titleAnimation: slideUp,
+    descriptionAnimation: {
+      ...slideUp,
+      transition: { duration: 0.8, delay: 0.2 },
+    },
+    circleAnimations: heroCircleAnimations,
+  },
+  form: slideLeft,
+  sidebar: slideRight,
+};
+
+// Legal page animations
 export const legalPageAnimations = {
   container: fadeIn,
   header: slideUp,
