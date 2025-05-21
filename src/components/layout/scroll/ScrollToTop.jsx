@@ -4,7 +4,7 @@ import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
 
-// Scroll restoration component
+// Scroll restoration component (scroll to top when page is refreshed)
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -15,7 +15,46 @@ export const ScrollToTop = () => {
   return null;
 };
 
-// Back to top button component
+// Custom hook for tracking active section during scrolling in legal pages
+export const useScrollSectionTracker = (initialSection, offset = 150) => {
+  const [activeSection, setActiveSection] = useState(initialSection);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("[data-section]");
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+          window.scrollY >= sectionTop - offset &&
+          window.scrollY < sectionTop + sectionHeight - offset
+        ) {
+          setActiveSection(section.getAttribute("data-section"));
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [offset]);
+
+  // Helper function to scroll to a specific section
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - (offset - 50), // Adjust offset for better positioning
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return { activeSection, scrollToSection };
+};
+
+// Back to top button component (scroll to top when button is clicked)
 export const BackToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
 

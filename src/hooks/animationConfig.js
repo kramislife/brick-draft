@@ -93,3 +93,25 @@ export const featureAnimation = (index) => ({
   viewport: { once: true },
   transition: { duration: 0.5, delay: index * 0.1 },
 });
+
+export const sectionFadeIn = (index) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, delay: index * 0.05 },
+});
+
+export const listItemFadeIn = (index) => ({
+  initial: { opacity: 0, x: -10 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.3, delay: index * 0.1 },
+});
+
+// Legal page specific animations
+export const legalPageAnimations = {
+  container: fadeIn,
+  header: slideUp,
+  section: sectionFadeIn,
+  listItem: listItemFadeIn,
+};
