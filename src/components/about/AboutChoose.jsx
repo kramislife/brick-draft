@@ -1,19 +1,15 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 const AboutChoose = ({ data, animations }) => {
   const { headerAnimation, featureAnimation, iconAnimation } = animations;
 
   return (
-    <section className="py-10 px-5 bg-secondary/50">
+    <section className="py-10 px-5">
       <motion.div {...headerAnimation} className="text-center mb-5 md:mb-10">
-        <Badge variant="accent" className="text-sm font-medium mb-5 py-2 px-5">
-          {data.badge}
-        </Badge>
         <h2 className="text-3xl font-bold mb-4">{data.title}</h2>
-        <p className="max-w-4xl mx-auto italic leading-relaxed">
+        <p className="max-w-2xl mx-auto text-muted-foreground">
           {data.description}
         </p>
       </motion.div>
@@ -27,7 +23,7 @@ const AboutChoose = ({ data, animations }) => {
                 <CardContent className="p-5">
                   <div className="flex items-start gap-4">
                     <motion.div
-                      {...iconAnimation}
+                  
                       className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300"
                     >
                       <IconComponent className="h-6 w-6" />

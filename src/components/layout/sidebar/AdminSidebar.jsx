@@ -15,7 +15,7 @@ const AdminSidebar = () => {
     <div className="relative">
       <div
         className={`h-screen border-r flex flex-col transition-all duration-300 ease-in-out ${
-          collapsed ? "w-20" : "w-80"
+          collapsed ? "w-20" : "w-72"
         }`}
       >
         {/* Header with integrated toggle button */}

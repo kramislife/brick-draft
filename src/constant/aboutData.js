@@ -9,6 +9,11 @@ import {
   Truck,
   Headphones,
   Users,
+  Trophy,
+  Telescope,
+  LightbulbIcon,
+  Dices,
+  Hourglass,
 } from "lucide-react";
 
 // Hero section data
@@ -42,31 +47,49 @@ export const worksData = {
     "Join our engaging Brick Drafts for a chance to acquire the exact LEGO® elements you've been searching for.",
   steps: [
     {
+      icon: Telescope,
+      iconBg: "bg-blue-100",
+      iconColor: "text-blue-500",
       title: "Explore LEGO® Sets",
       description:
-        "Each draw features unique LEGO® sets. Preview included pieces and all the key details before joining.",
+        "We feature different LEGO® sets for each draw. See what pieces are included and other details.",
     },
     {
+      icon: Dices,
+      iconBg: "bg-purple-100",
+      iconColor: "text-purple-500",
       title: "Join the Draw",
       description:
         "Buy tickets for the sets you're interested in. More tickets mean better odds in the picking order.",
     },
     {
+      icon: Hourglass,
+      iconBg: "bg-pink-100",
+      iconColor: "text-pink-500",
       title: "Ticket Queueing",
       description:
-        "After ticket sales close, we randomly shuffle the queue based on tickets purchased.",
+        "After ticket sales close, we randomly queue tickets for everyone who bought them.",
     },
     {
+      icon: Trophy,
+      iconBg: "bg-amber-100",
+      iconColor: "text-amber-500",
       title: "Pick Your Bricks",
       description:
         "When your turn comes, choose your favorite LEGO® pieces from what's available.",
     },
     {
+      icon: LightbulbIcon,
+      iconBg: "bg-emerald-100",
+      iconColor: "text-emerald-500",
       title: "Understand the Draft",
       description:
-        "Round 1: Standard order. Round 2: Reverse order (last goes first). This pattern continues until all bricks are picked!",
+        "Round 1: Normal order. \nRound 2: Reverse order (last goes first). This pattern continues until all bricks are picked!",
     },
     {
+      icon: Truck,
+      iconBg: "bg-cyan-100",
+      iconColor: "text-cyan-500",
       title: "Receive Your LEGO®",
       description:
         "After the draw wraps up, we'll ship your selected bricks straight to your doorstep.",
