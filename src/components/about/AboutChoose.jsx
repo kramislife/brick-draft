@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutChoose = ({ data, animations }) => {
-  const { headerAnimation, featureAnimation, iconAnimation } = animations;
+  const { headerAnimation, featureAnimation } = animations;
 
   return (
     <section className="py-10 px-5">
@@ -15,33 +15,29 @@ const AboutChoose = ({ data, animations }) => {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {data.features.map((feature, index) => {
-          const IconComponent = feature.icon;
-          return (
-            <motion.div key={index} {...featureAnimation(index)}>
-              <Card className="group hover:border-accent cursor-pointer h-full">
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-4">
-                    <motion.div
-                  
-                      className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300"
-                    >
-                      <IconComponent className="h-6 w-6" />
-                    </motion.div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
+        {data.features.map((feature, index) => (
+          <motion.div key={index} {...featureAnimation(index)}>
+            <Card className="group hover:border-accent cursor-pointer h-full">
+              <CardContent className="p-5">
+                <div className="flex items-start gap-4">
+                  <motion.div
+                    className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300"
+                  >
+                    <feature.icon className="h-6 w-6" />
+                  </motion.div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

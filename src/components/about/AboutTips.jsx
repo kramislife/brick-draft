@@ -15,24 +15,21 @@ const AboutTips = ({ data, animations }) => {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {data.tips.map((tip, index) => {
-          const IconComponent = tip.icon;
-          return (
-            <motion.div key={index} {...tipAnimation(index)}>
-              <Card className="h-full dark:border-none">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-bold mb-2">{tip.title}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {tip.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
+        {data.tips.map((tip, index) => (
+          <motion.div key={index} {...tipAnimation(index)}>
+            <Card className="h-full dark:border-none">
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
+                  <tip.icon className="w-6 h-6" />
+                </div>
+                <h3 className="font-bold mb-2">{tip.title}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {tip.description}
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

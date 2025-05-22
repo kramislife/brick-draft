@@ -14,6 +14,10 @@ import {
   LightbulbIcon,
   Dices,
   Hourglass,
+  Puzzle,
+  PiggyBank,
+  Sparkle,
+  RefreshCcw,
 } from "lucide-react";
 
 // Hero section data
@@ -167,6 +171,46 @@ export const chooseData = {
       title: "Community First",
       description:
         "More than just prizes — Brick Draft is about connecting fans who love creativity, building, and sharing their LEGO passion.",
+    },
+  ],
+};
+
+// Why Choose Brick Draft section data in home page
+
+export const whyChooseData = {
+  title: "Why Choose Brick Draft?",
+  description:
+    "Join thousands of LEGO® enthusiasts who are winning their dream sets through our exciting lottery system!",
+  features: [
+    {
+      icon: Puzzle,
+      title: "Get Specific Pieces",
+      description:
+        "Now is the time to get those rare or unique LEGO® elements you've always wanted!",
+    },
+    {
+      icon: PiggyBank,
+      title: "Save Money",
+      description:
+        "Potentially get your desired bricks for much less than buying an entire set.",
+    },
+    {
+      icon: Sparkle,
+      title: "Exciting and Fun",
+      description:
+        "The thrill of the draw and the anticipation of your turn make it an engaging experience.",
+    },
+    {
+      icon: Users,
+      title: "Community of Builders",
+      description:
+        "Connect with fellow LEGO® enthusiasts who share your passion.",
+    },
+    {
+      icon: RefreshCcw,
+      title: "Regularly Updated Draws",
+      description:
+        "We constantly feature new LEGO® sets and exciting opportunities.",
     },
   ],
 };
