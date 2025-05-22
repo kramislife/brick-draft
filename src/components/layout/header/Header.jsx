@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header className="bg-foreground text-background dark:bg-background dark:text-foreground sticky top-0 z-50 w-full dark:border-b dark:border-border font-['Bangers'] tracking-widest">
-      <div className="p-5 flex justify-between items-center">
+      <div className="p-5 flex justify-between items-center max-w-screen-2xl mx-auto">
         <NavLink to="/" className="font-bold text-3xl">
           Brick <span className="text-accent">Draft</span>
         </NavLink>

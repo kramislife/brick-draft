@@ -5,7 +5,7 @@ import Footer from "@/components/layout/footer/Footer";
 import AdminSidebar from "@/components/layout/sidebar/AdminSidebar";
 import {
   BackToTopButton,
-  ScrollToTop,  
+  ScrollToTop,
 } from "@/components/layout/scroll/ScrollToTop";
 
 const RootLayout = () => {
@@ -15,12 +15,7 @@ const RootLayout = () => {
   return (
     <div className="relative min-h-screen flex flex-col">
       <ScrollToTop />
-
-      {/* Header */}
-      <div className="w-full max-w-screen-2xl mx-auto">
-        <Header />
-      </div>
-
+      <Header />
       {/* Main Content */}
       <div className="flex-1 w-full">
         <div className="flex w-full max-w-screen-2xl mx-auto h-full">
@@ -30,12 +25,7 @@ const RootLayout = () => {
           </main>
         </div>
       </div>
-
-      {/* Footer */}
-      <div className="w-full max-w-screen-2xl mx-auto">
-        <Footer />
-      </div>
-
+      <Footer />
       <BackToTopButton />
     </div>
   );

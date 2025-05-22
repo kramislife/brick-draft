@@ -14,7 +14,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-accent text-foreground dark:bg-primary p-5">
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-10">
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-10 max-w-screen-2xl mx-auto">
         <FooterSection title="Account">
           <FooterNavLinks links={accountLinks} />
         </FooterSection>
