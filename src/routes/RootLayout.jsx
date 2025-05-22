@@ -1,21 +1,41 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
+import AdminSidebar from "@/components/layout/sidebar/AdminSidebar";
 import {
   BackToTopButton,
-  ScrollToTop,
+  ScrollToTop,  
 } from "@/components/layout/scroll/ScrollToTop";
 
 const RootLayout = () => {
+  const { pathname } = useLocation();
+  const isAdminRoute = pathname.startsWith("/admin");
+
   return (
     <div className="relative min-h-screen flex flex-col">
       <ScrollToTop />
-      <Header />
-      <main className="flex-1 mx-auto w-full max-w-screen-2xl">
-        <Outlet />
-      </main>
-      <Footer />
+
+      {/* Header */}
+      <div className="w-full max-w-screen-2xl mx-auto">
+        <Header />
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 w-full">
+        <div className="flex w-full max-w-screen-2xl mx-auto h-full">
+          {isAdminRoute && <AdminSidebar />}
+          <main className="flex-1 w-full">
+            <Outlet />
+          </main>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="w-full max-w-screen-2xl mx-auto">
+        <Footer />
+      </div>
+
       <BackToTopButton />
     </div>
   );

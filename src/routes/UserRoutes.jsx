@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import RootLayout from "@/routes/RootLayout";
 import ProtectedRoutes from "@/routes/ProtectedRoutes";
+import AdminProtectedRoutes from "@/routes/AdminProtectedRoutes";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
@@ -12,6 +13,14 @@ import Profile from "@/pages/auth/Profile";
 import ForgotPassword from "@/pages/auth/ForgotPassword";
 import LotteryAll from "@/pages/LotteryAll";
 import LotteryDetails from "@/pages/LotteryDetails";
+import Dashboard from "@/pages/admin/Dashboard";
+import Announcement from "@/pages/admin/Announcement";
+import Banner from "@/pages/admin/Banner";
+import Lottery from "@/pages/admin/Lottery";
+import Parts from "@/pages/admin/Parts";
+import Tickets from "@/pages/admin/Tickets";
+import Orders from "@/pages/admin/Orders";
+import Users from "@/pages/admin/Users";
 
 const UserRoutes = () => {
   return (
@@ -27,10 +36,22 @@ const UserRoutes = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/lottery/all" element={<LotteryAll />} />
         <Route path="/lottery/:id" element={<LotteryDetails />} />
-        {/* Protected Routes */}
+
+        {/* Protected User Routes */}
         <Route element={<ProtectedRoutes />}>
-          <Route path="/dashboard" element={<div>Dashboard Page</div>} />
           <Route path="/profile" element={<Profile />} />
+        </Route>
+
+        {/* Protected Admin Routes */}
+        <Route element={<AdminProtectedRoutes />}>
+          <Route path="/admin" element={<Dashboard />} />
+          <Route path="/admin/announcements" element={<Announcement />} />
+          <Route path="/admin/banners" element={<Banner />} />
+          <Route path="/admin/lotteries" element={<Lottery />} />
+          <Route path="/admin/parts" element={<Parts />} />
+          <Route path="/admin/tickets" element={<Tickets />} />
+          <Route path="/admin/orders" element={<Orders />} />
+          <Route path="/admin/users" element={<Users />} />
         </Route>
       </Route>
     </Routes>
