@@ -6,7 +6,7 @@ import AdminProtectedRoutes from "@/routes/AdminProtectedRoutes";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
-import History from "@/pages/History";
+import Results from "@/pages/Results";
 import TermsofUse from "@/components/layout/footer/TermsofUse";
 import PrivacyPolicy from "@/components/layout/footer/PrivacyPolicy";
 import Profile from "@/pages/auth/Profile";
@@ -21,6 +21,7 @@ import Parts from "@/pages/admin/Parts";
 import Tickets from "@/pages/admin/Tickets";
 import Orders from "@/pages/admin/Orders";
 import Users from "@/pages/admin/Users";
+import LiveDraw from "@/pages/LiveDraw";
 
 const UserRoutes = () => {
   return (
@@ -29,8 +30,9 @@ const UserRoutes = () => {
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/history" element={<History />} />
+        <Route path="/contact-us" element={<Contact />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/live-draw" element={<LiveDraw />} />
         <Route path="/terms-of-use" element={<TermsofUse />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

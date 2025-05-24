@@ -2,7 +2,6 @@ import {
   Home,
   Info,
   Phone,
-  Clock,
   User,
   LogIn,
   UserPlus,
@@ -12,6 +11,8 @@ import {
   Mail,
   Facebook,
   Instagram,
+  Trophy,
+  Tv,
 } from "lucide-react";
 
 export const publicNavLinks = [
@@ -21,19 +22,24 @@ export const publicNavLinks = [
     icon: Home,
   },
   {
+    name: "Results",
+    path: "/results",
+    icon: Trophy,
+  },
+  {
+    name: "Live Draw",
+    path: "/live-draw",
+    icon: Tv,
+  },
+  {
     name: "About",
     path: "/about",
     icon: Info,
   },
   {
     name: "Contact Us",
-    path: "/contact",
+    path: "/contact-us",
     icon: Phone,
-  },
-  {
-    name: "Ticket History",
-    path: "/history",
-    icon: Clock,
   },
 ];
 

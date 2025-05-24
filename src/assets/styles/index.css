@@ -133,3 +133,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .gradient-heading {
+    @apply text-4xl font-bold bg-gradient-to-r from-yellow-600 to-yellow-500 dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent;
+  }
+}
+

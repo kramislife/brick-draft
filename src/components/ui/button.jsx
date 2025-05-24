@@ -25,6 +25,8 @@ const buttonVariants = cva(
           "bg-primary text-background dark:bg-background dark:text-foreground border-none",
         legal:
           "justify-start w-full bg-accent hover:bg-accent/80 text-accent-foreground font-semibold",
+        scaling:
+          "w-full text-xl font-black text-black py-6 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
