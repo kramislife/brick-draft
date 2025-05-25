@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Box, PanelLeft, PanelRight } from "lucide-react";
+import { Box, ChevronFirst, ChevronLast } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { adminNavigation } from "@/constant/adminNavigation";
 
@@ -12,27 +12,47 @@ const AdminSidebar = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="h-full flex flex-col border-r bg-background">
       <div
-        className={`h-screen border-r flex flex-col transition-all duration-300 ease-in-out ${
-          collapsed ? "w-20" : "w-72"
+        className={`transition-all duration-300 ease-in-out ${
+          collapsed ? "w-20" : "w-70"
         }`}
       >
-        {/* Header with integrated toggle button */}
-        <div className="flex items-center justify-between p-5">
-          {!collapsed && (
+        {/* Header */}
+        <div className="flex items-center justify-between p-5 border-b relative">
+          {!collapsed ? (
             <div className="flex items-center gap-3">
+              <div className="bg-black text-white rounded-md p-2">
+                <Box size={24} />
+              </div>
+              <div className="flex flex-col">
+                <h1 className="font-bold text-xl whitespace-nowrap">
+                  Brick Draft
+                </h1>
+                <p className="text-xs text-muted-foreground">Admin Panel</p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex justify-center w-full">
               <Box size={24} />
-              <h1 className="font-bold text-xl whitespace-nowrap">
-                Brick Draft
-              </h1>
             </div>
           )}
 
-          {/* Toggle button inside header */}
-          <Button variant="ghost" size="sm" onClick={toggleSidebar}>
-            {collapsed ? <PanelRight /> : <PanelLeft />}
-          </Button>
+          {/* Toggle button placed at the far right border */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full text-muted-foreground"
+              onClick={toggleSidebar}
+            >
+              {collapsed ? (
+                <ChevronLast size={20} />
+              ) : (
+                <ChevronFirst size={20} />
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Navigation */}
@@ -46,8 +66,7 @@ const AdminSidebar = () => {
                   </h2>
                 </div>
               )}
-
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {section.items.map((item, itemIndex) => {
                   const Icon = item.icon;
 
@@ -57,14 +76,13 @@ const AdminSidebar = () => {
                       to={item.path}
                       title={item.label}
                       end={item.path === "/admin"}
-                      className={({ isActive }) => `
-                        group flex items-center p-4 rounded-xl text-sm font-medium transition-all duration-200
-                        ${
+                      className={({ isActive }) =>
+                        `group flex items-center p-3 rounded-md text-sm font-medium transition-all duration-200 ${
                           isActive
                             ? "bg-accent text-accent-foreground"
                             : "text-muted-foreground hover:bg-ring/10"
-                        }
-                      `}
+                        }`
+                      }
                     >
                       <div
                         className={`flex items-center ${

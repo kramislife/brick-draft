@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
 import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
-import BannerForm from "@/components/admin/components/BannerForm";
+import CollectionForm from "@/components/admin/components/CollectionForm";
 
-const Banner = () => {
+const Collections = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editData, setEditData] = useState(null);
 
@@ -25,23 +25,25 @@ const Banner = () => {
 
   const columns = [
     {
-      accessorKey: "preview",
-      header: "Preview",
+      accessorKey: "name",
+      header: "Collection Name",
+    },
+    {
+      accessorKey: "description",
+      header: "Description",
+    },
+    {
+      accessorKey: "items",
+      header: "Items",
+    },
+    {
+      accessorKey: "status",
+      header: "Status",
       cell: ({ row }) => (
-        <img
-          src={row.original.image}
-          alt={row.original.title}
-          className="h-12 w-20 object-cover rounded"
-        />
+        <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20">
+          {row.original.status}
+        </span>
       ),
-    },
-    {
-      accessorKey: "title",
-      header: "Title",
-    },
-    {
-      accessorKey: "badge",
-      header: "Badge",
     },
     {
       accessorKey: "created",
@@ -56,8 +58,8 @@ const Banner = () => {
   return (
     <>
       <ViewLayout
-        title="Banners"
-        description="Manage banner images and content for your platform."
+        title="Collections"
+        description="Manage LEGO collections for your lottery items."
         onAdd={handleAdd}
         columns={columns}
         data={[]}
@@ -66,15 +68,15 @@ const Banner = () => {
       <AddDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
-        title="Banner"
-        description="Add a new banner to display on the platform."
+        title="Collection"
+        description="Add a new collection to organize lottery items."
         onSubmit={handleSubmit}
         isEdit={!!editData}
       >
-        <BannerForm defaultValues={editData} />
+        <CollectionForm defaultValues={editData} />
       </AddDialogLayout>
     </>
   );
 };
 
-export default Banner;
+export default Collections;

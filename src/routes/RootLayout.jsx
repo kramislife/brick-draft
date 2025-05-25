@@ -19,8 +19,16 @@ const RootLayout = () => {
       {/* Main Content */}
       <div className="flex-1 w-full">
         <div className="flex w-full max-w-screen-2xl mx-auto h-full">
-          {isAdminRoute && <AdminSidebar />}
-          <main className="flex-1 w-full">
+          {isAdminRoute && (
+            <div className="sticky top-0 h-screen">
+              <AdminSidebar />
+            </div>
+          )}
+          <main
+            className={`flex-1 w-full overflow-y-auto ${
+              isAdminRoute ? "p-5" : ""
+            }`}
+          >
             <Outlet />
           </main>
         </div>

@@ -5,9 +5,9 @@ import {
   PackageIcon,
   Puzzle,
   TicketIcon,
-  ShoppingCartIcon,
   UsersIcon,
-  SettingsIcon,
+  FolderClosed,
+  PuzzleIcon,
 } from "lucide-react";
 
 export const adminNavigation = [
@@ -34,6 +34,16 @@ export const adminNavigation = [
         path: "/admin/banners",
         icon: ImageIcon,
       },
+      {
+        label: "Collections",
+        path: "/admin/collections",
+        icon: FolderClosed,
+      },
+      {
+        label: "Part Categories",
+        path: "/admin/part-categories",
+        icon: PuzzleIcon,
+      },
     ],
   },
   {
@@ -54,11 +64,6 @@ export const adminNavigation = [
         path: "/admin/tickets",
         icon: TicketIcon,
       },
-      {
-        label: "Orders",
-        path: "/admin/orders",
-        icon: ShoppingCartIcon,
-      },
     ],
   },
   {
@@ -71,14 +76,14 @@ export const adminNavigation = [
       },
     ],
   },
-//   {
-//     section: "System",
-//     items: [
-//       {
-//         label: "Settings",
-//         path: "/admin/settings",
-//         icon: SettingsIcon,
-//       },
-//     ],
-//   },
+  //   {
+  //     section: "System",
+  //     items: [
+  //       {
+  //         label: "Settings",
+  //         path: "/admin/settings",
+  //         icon: SettingsIcon,
+  //       },
+  //     ],
+  //   },
 ];
