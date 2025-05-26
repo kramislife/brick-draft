@@ -6,8 +6,8 @@ const CollectionForm = () => {
   return (
     <div className="space-y-5">
       <div className="space-y-2">
-        <Label htmlFor="name">Collection Name</Label>
-        <Input id="name" placeholder="e.g., Harry Potter, Marvel, Disney" />
+        <Label htmlFor="collection">Collection</Label>
+        <Input id="collection" placeholder="e.g., Harry Potter, Marvel, Disney" />
       </div>
 
       <div className="space-y-2">

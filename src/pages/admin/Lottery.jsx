@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
-import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
+import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import LotteryForm from "@/components/admin/components/LotteryForm";
 
 const Lottery = () => {
@@ -25,8 +25,8 @@ const Lottery = () => {
 
   const columns = [
     {
-      accessorKey: "name",
-      header: "Set Name",
+      accessorKey: "set",
+      header: "Set",
     },
     {
       accessorKey: "collection",
@@ -58,24 +58,24 @@ const Lottery = () => {
   return (
     <>
       <ViewLayout
-        title="Lottery"
+        title="Lottery Set"
         description="Manage lottery sets for your platform."
         onAdd={handleAdd}
         columns={columns}
         data={[]}
       />
 
-      <AddDialogLayout
+      <AdminDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
-        title="Lottery"
-        description="Add a new lottery set to the platform."
+        title="Lottery Set"
+        description="Fill in the details below to create a new lottery set."
         onSubmit={handleSubmit}
         isEdit={!!editData}
         size="5xl"
       >
         <LotteryForm defaultValues={editData} />
-      </AddDialogLayout>
+      </AdminDialogLayout>
     </>
   );
 };

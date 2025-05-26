@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
-import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
+import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import PartForm from "@/components/admin/components/PartForm";
 
 const Parts = () => {
@@ -71,16 +71,17 @@ const Parts = () => {
         data={[]}
       />
 
-      <AddDialogLayout
+      <AdminDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
-        title="Part"
-        description="Add a new part to the inventory."
+        title="LEGO Part"
+        description="Add a new LEGO part to your inventory."
         onSubmit={handleSubmit}
         isEdit={!!editData}
+        size="3xl"
       >
         <PartForm defaultValues={editData} />
-      </AddDialogLayout>
+      </AdminDialogLayout>
     </>
   );
 };

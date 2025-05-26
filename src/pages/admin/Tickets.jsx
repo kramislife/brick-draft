@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
-import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
+import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import TicketForm from "@/components/admin/components/TicketForm";
 
 const Tickets = () => {
@@ -60,7 +60,7 @@ const Tickets = () => {
         data={[]}
       />
 
-      <AddDialogLayout
+      <AdminDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Ticket"
@@ -69,7 +69,7 @@ const Tickets = () => {
         isEdit={!!editData}
       >
         <TicketForm defaultValues={editData} />
-      </AddDialogLayout>
+      </AdminDialogLayout>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
-import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
+import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import PartCategoryForm from "@/components/admin/components/PartCategoryForm";
 
 const PartCategories = () => {
@@ -25,8 +25,8 @@ const PartCategories = () => {
 
   const columns = [
     {
-      accessorKey: "name",
-      header: "Category Name",
+      accessorKey: "category",
+      header: "Category",
     },
     {
       accessorKey: "description",
@@ -46,8 +46,8 @@ const PartCategories = () => {
       ),
     },
     {
-      accessorKey: "created",
-      header: "Created",
+      accessorKey: "createdAt",
+      header: "Created At",
     },
     {
       id: "actions",
@@ -65,7 +65,7 @@ const PartCategories = () => {
         data={[]}
       />
 
-      <AddDialogLayout
+      <AdminDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Part Category"
@@ -74,7 +74,7 @@ const PartCategories = () => {
         isEdit={!!editData}
       >
         <PartCategoryForm defaultValues={editData} />
-      </AddDialogLayout>
+      </AdminDialogLayout>
     </>
   );
 };

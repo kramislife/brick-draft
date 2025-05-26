@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
-import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
+import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import BannerForm from "@/components/admin/components/BannerForm";
 
 const Banner = () => {
@@ -63,7 +63,7 @@ const Banner = () => {
         data={[]}
       />
 
-      <AddDialogLayout
+      <AdminDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Banner"
@@ -72,7 +72,7 @@ const Banner = () => {
         isEdit={!!editData}
       >
         <BannerForm defaultValues={editData} />
-      </AddDialogLayout>
+      </AdminDialogLayout>
     </>
   );
 };

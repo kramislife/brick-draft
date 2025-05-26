@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
-import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
+import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import AnnouncementForm from "@/components/admin/components/AnnouncementForm";
 
 const Announcement = () => {
@@ -26,8 +26,8 @@ const Announcement = () => {
 
   const columns = [
     {
-      accessorKey: "text",
-      header: "Announcement Text",
+      accessorKey: "announcement",
+      header: "Announcement",
     },
     {
       accessorKey: "type",
@@ -38,8 +38,8 @@ const Announcement = () => {
       header: "End Date",
     },
     {
-      accessorKey: "created",
-      header: "Created",
+      accessorKey: "createdAt",
+      header: "Created At",
     },
     {
       id: "actions",
@@ -57,7 +57,7 @@ const Announcement = () => {
         data={[]}
       />
 
-      <AddDialogLayout
+      <AdminDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Announcement"
@@ -66,7 +66,7 @@ const Announcement = () => {
         isEdit={!!editData}
       >
         <AnnouncementForm defaultValues={editData} />
-      </AddDialogLayout>
+      </AdminDialogLayout>
     </>
   );
 };

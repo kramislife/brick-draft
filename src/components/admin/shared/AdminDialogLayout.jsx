@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-const AddDialogLayout = ({
+const AdminDialogLayout = ({
   open,
   onClose,
   title,
@@ -54,4 +54,4 @@ const AddDialogLayout = ({
   );
 };
 
-export default AddDialogLayout;
+export default AdminDialogLayout;

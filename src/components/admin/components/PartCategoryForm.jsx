@@ -6,8 +6,8 @@ const PartCategoryForm = () => {
   return (
     <div className="space-y-5">
       <div className="space-y-2">
-        <Label htmlFor="name">Category Name</Label>
-        <Input id="name" placeholder="e.g., Bricks, Plates, Tiles" />
+        <Label htmlFor="category">Category</Label>
+        <Input id="category" placeholder="e.g., Bricks, Plates, Tiles" />
       </div>
 
       <div className="space-y-2">
@@ -15,7 +15,6 @@ const PartCategoryForm = () => {
         <Textarea
           id="description"
           placeholder="Enter a description for this category"
-     
         />
       </div>
     </div>

@@ -104,6 +104,7 @@ const LotteryForm = () => {
                 </Button>
               )}
             </Label>
+
             <div className="space-y-2">
               {formData.whyCollect.map((point, index) => (
                 <Textarea
@@ -114,12 +115,16 @@ const LotteryForm = () => {
                   rows={2}
                 />
               ))}
+
+              <p className="text-xs text-muted-foreground">
+                Add up to 3 reasons why collectors should want this set.
+              </p>
             </div>
           </div>
         </div>
 
         {/* Prices */}
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-2 gap-5 pt-3">
           <div className="space-y-2">
             <Label htmlFor="ticketPrice">Ticket Price</Label>
             <Input

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
-import AddDialogLayout from "@/components/admin/shared/AddDialogLayout";
+import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import CollectionForm from "@/components/admin/components/CollectionForm";
 
 const Collections = () => {
@@ -25,8 +25,8 @@ const Collections = () => {
 
   const columns = [
     {
-      accessorKey: "name",
-      header: "Collection Name",
+      accessorKey: "collection",
+      header: "Collection",
     },
     {
       accessorKey: "description",
@@ -46,8 +46,8 @@ const Collections = () => {
       ),
     },
     {
-      accessorKey: "created",
-      header: "Created",
+      accessorKey: "createdAt",
+      header: "Created At",
     },
     {
       id: "actions",
@@ -65,7 +65,7 @@ const Collections = () => {
         data={[]}
       />
 
-      <AddDialogLayout
+      <AdminDialogLayout
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
         title="Collection"
@@ -74,7 +74,7 @@ const Collections = () => {
         isEdit={!!editData}
       >
         <CollectionForm defaultValues={editData} />
-      </AddDialogLayout>
+      </AdminDialogLayout>
     </>
   );
 };
