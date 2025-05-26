@@ -44,7 +44,7 @@ const AdminDialogLayout = ({
             <Button type="button" variant="outline" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit" variant="accent">
+            <Button type="submit">
               {isEdit ? "Save Changes" : `Create ${title}`}
             </Button>
           </div>

@@ -1,31 +1,75 @@
 import React, { useState } from "react";
+import { toast } from "sonner";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
 import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import CollectionForm from "@/components/admin/components/CollectionForm";
+import {
+  useGetCollectionsQuery,
+  useAddCollectionMutation,
+  useUpdateCollectionMutation,
+} from "@/redux/api/admin/collectionApi";
 
 const Collections = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [editData, setEditData] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+  });
+
+  const { data: collections = [], isLoading } = useGetCollectionsQuery();
+  const [addCollection] = useAddCollectionMutation();
+  const [updateCollection] = useUpdateCollectionMutation();
 
   const handleAdd = () => {
-    setEditData(null);
+    setFormData({ name: "", description: "" });
     setIsDialogOpen(true);
   };
 
   const handleEdit = (data) => {
-    setEditData(data);
+    setFormData(data);
     setIsDialogOpen(true);
   };
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted", editData ? "edit" : "add");
-    setIsDialogOpen(false);
+    try {
+      console.log("Submitting form data:", formData);
+
+      if (formData.id) {
+        const result = await updateCollection({
+          id: formData.id,
+          ...formData,
+        }).unwrap();
+        toast.success(result.message || "Collection updated successfully", {
+          description:
+            result.description || `${formData.name} has been updated.`,
+        });
+      } else {
+        const result = await addCollection(formData).unwrap();
+        toast.success(result.message || "Collection created successfully", {
+          description:
+            result.description ||
+            `${formData.name} has been added to collections.`,
+        });
+      }
+
+      setIsDialogOpen(false);
+    } catch (error) {
+      toast.error(error.data?.message || "Operation failed", {
+        description:
+          error.data?.description || "Something went wrong. Please try again.",
+      });
+    }
   };
 
   const columns = [
     {
-      accessorKey: "collection",
+      accessorKey: "name",
       header: "Collection",
     },
     {
@@ -39,11 +83,6 @@ const Collections = () => {
     {
       accessorKey: "status",
       header: "Status",
-      cell: ({ row }) => (
-        <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20">
-          {row.original.status}
-        </span>
-      ),
     },
     {
       accessorKey: "createdAt",
@@ -62,7 +101,8 @@ const Collections = () => {
         description="Manage LEGO collections for your lottery items."
         onAdd={handleAdd}
         columns={columns}
-        data={[]}
+        data={collections}
+        isLoading={isLoading}
       />
 
       <AdminDialogLayout
@@ -71,9 +111,9 @@ const Collections = () => {
         title="Collection"
         description="Add a new collection to organize lottery items."
         onSubmit={handleSubmit}
-        isEdit={!!editData}
+        isEdit={!!formData.id}
       >
-        <CollectionForm defaultValues={editData} />
+        <CollectionForm formData={formData} onChange={handleChange} />
       </AdminDialogLayout>
     </>
   );

@@ -1,31 +1,77 @@
 import React, { useState } from "react";
+import { toast } from "sonner";
 import ViewLayout from "@/components/admin/shared/ViewLayout";
 import AdminDialogLayout from "@/components/admin/shared/AdminDialogLayout";
 import PartCategoryForm from "@/components/admin/components/PartCategoryForm";
+import {
+  useGetPartCategoriesQuery,
+  useAddPartCategoryMutation,
+  useUpdatePartCategoryMutation,
+} from "@/redux/api/admin/partCategoryApi";
 
 const PartCategories = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [editData, setEditData] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+  });
+
+  const { data: categories = [], isLoading } = useGetPartCategoriesQuery();
+  const [addPartCategory] = useAddPartCategoryMutation();
+  const [updatePartCategory] = useUpdatePartCategoryMutation();
 
   const handleAdd = () => {
-    setEditData(null);
+    setFormData({ name: "", description: "" });
     setIsDialogOpen(true);
   };
 
   const handleEdit = (data) => {
-    setEditData(data);
+    setFormData(data);
     setIsDialogOpen(true);
   };
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted", editData ? "edit" : "add");
-    setIsDialogOpen(false);
+    try {
+      console.log("Submitting form data:", formData);
+
+      if (formData.id) {
+        // Update existing category
+        const result = await updatePartCategory({
+          id: formData.id,
+          ...formData,
+        }).unwrap();
+        toast.success(result.message || "Category updated successfully", {
+          description:
+            result.description || `${formData.name} has been updated.`,
+        });
+      } else {
+        // Add new category
+        const result = await addPartCategory(formData).unwrap();
+        toast.success(result.message || "Category created successfully", {
+          description:
+            result.description ||
+            `${formData.name} has been added to categories.`,
+        });
+      }
+
+      setIsDialogOpen(false);
+    } catch (error) {
+      toast.error(error.data?.message || "Operation failed", {
+        description:
+          error.data?.description || "Something went wrong. Please try again.",
+      });
+    }
   };
 
   const columns = [
     {
-      accessorKey: "category",
+      accessorKey: "name",
       header: "Category",
     },
     {
@@ -39,11 +85,6 @@ const PartCategories = () => {
     {
       accessorKey: "status",
       header: "Status",
-      cell: ({ row }) => (
-        <span className="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20">
-          {row.original.status}
-        </span>
-      ),
     },
     {
       accessorKey: "createdAt",
@@ -62,7 +103,8 @@ const PartCategories = () => {
         description="Manage categories for LEGO parts and components."
         onAdd={handleAdd}
         columns={columns}
-        data={[]}
+        data={categories}
+        isLoading={isLoading}
       />
 
       <AdminDialogLayout
@@ -71,9 +113,9 @@ const PartCategories = () => {
         title="Part Category"
         description="Add a new category for organizing parts."
         onSubmit={handleSubmit}
-        isEdit={!!editData}
+        isEdit={!!formData.id}
       >
-        <PartCategoryForm defaultValues={editData} />
+        <PartCategoryForm formData={formData} onChange={handleChange} />
       </AdminDialogLayout>
     </>
   );
