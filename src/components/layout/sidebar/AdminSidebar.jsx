@@ -12,9 +12,9 @@ const AdminSidebar = () => {
   };
 
   return (
-    <div className="h-full flex flex-col border-r bg-background">
+    <div className="h-full border-r bg-background">
       <div
-        className={`transition-all duration-300 ease-in-out ${
+        className={`transition-all duration-300 ease-in-out sticky -top-2 ${
           collapsed ? "w-20" : "w-70"
         }`}
       >
@@ -56,7 +56,7 @@ const AdminSidebar = () => {
         </div>
 
         {/* Navigation */}
-        <div className="flex-1 overflow-y-auto px-3 py-5">
+        <div className="px-3 py-5">
           {adminNavigation.map((section, index) => (
             <div key={index} className="mb-5">
               {!collapsed && (
