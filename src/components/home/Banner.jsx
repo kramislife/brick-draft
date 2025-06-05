@@ -100,7 +100,7 @@ const Banner = () => {
                   )}
 
                   {/* Title */}
-                  <h1 className="text-5xl md:text-7xl font-bold text-white mb-5">
+                  <h1 className="text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
                     {banner.title}
                   </h1>
 

@@ -24,7 +24,7 @@ const RootLayout = () => {
               <AdminSidebar />
             </aside>
           )}
-          <main className={`flex-1 w-full ${isAdminRoute ? "p-5" : ""}`}>
+          <main className={`flex-1 w-full  ${isAdminRoute ? "p-5 gradient-blue" : ""}`}>
             <Outlet />
           </main>
         </div>

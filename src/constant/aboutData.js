@@ -178,7 +178,6 @@ export const chooseData = {
 // Why Choose Brick Draft section data in home page
 
 export const whyChooseData = {
-  title: "Why Choose Brick Draft?",
   description:
     "Join thousands of LEGO® enthusiasts who are winning their dream sets through our exciting lottery system!",
   features: [

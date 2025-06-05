@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&family=Luckiest+Guy&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&family=Luckiest+Guy&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -16,6 +16,10 @@
   scrollbar-width: none; /* Firefox */
 }
 
+/*  For dark and light mode text
+- text-accent-foreground - black
+- text-sidebar-primary-foreground - white */
+
 :root {
   font-family: Poppins, Inter, Nunito, sans-serif, system-ui;
   color-scheme: light dark;
@@ -32,7 +36,7 @@
   --secondary-foreground: oklch(0.21 0.034 264.665);
   --muted: oklch(0.967 0.003 264.542);
   --muted-foreground: oklch(0.551 0.027 264.364);
-  --accent: #F9D547;
+  --accent: #f9d547;
   --accent-foreground: oklch(0.21 0.034 264.665);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.928 0.006 264.531);
@@ -51,6 +55,40 @@
   --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
   --sidebar-border: oklch(0.928 0.006 264.531);
   --sidebar-ring: oklch(0.707 0.022 261.325);
+}
+
+.dark {
+  --background: #132742;
+  --foreground: #ffffff;
+  --card: #1f3a5f;
+  --card-foreground: #ffffff;
+  --popover: #1f3a5f;
+  --popover-foreground: #ffffff;
+  --primary: #0f1f35;
+  --primary-foreground: #ffffff;
+  --secondary: #1f3a5f;
+  --secondary-foreground: #ffffff;
+  --muted: #1f3a5f;
+  --muted-foreground: rgba(255, 255, 255, 0.7);
+  --accent: #fedf00;
+  --accent-foreground: #000000;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: rgba(255, 255, 255, 0.3);
+  --chart-1: #1f3a5f;
+  --chart-2: #132742;
+  --chart-3: #0f1f35;
+  --chart-4: #fedf00;
+  --chart-5: #1f3a5f;
+  --sidebar: #132742;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0f1f35;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fedf00;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgba(255, 255, 255, 0.3);
 }
 
 @theme inline {
@@ -89,40 +127,24 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-}
-
-.dark {
-  --background: #32475f;
-  --foreground: #ffffff;
-  --card: #446088;
-  --card-foreground: #ffffff;
-  --popover: #446088;
-  --popover-foreground: #ffffff;
-  --primary: #2d3f5b;
-  --primary-foreground: #ffffff;
-  --secondary: #446088;
-  --secondary-foreground: #ffffff;
-  --muted: #446088;
-  --muted-foreground: rgba(255, 255, 255, 0.7);
-  --accent: #fedf00;
-  --accent-foreground: #000000;
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
-  --ring: rgba(255, 255, 255, 0.3);
-  --chart-1: #446088;
-  --chart-2: #32475f;
-  --chart-3: #28285b;
-  --chart-4: #fedf00;
-  --chart-5: #446088;
-  --sidebar: #32475f;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #28285b;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #fedf00;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: rgba(255, 255, 255, 0.3);
+  --color-dark-gradient: linear-gradient(
+    135deg,
+    #132742 0%,
+    #1f3a5f 70%,
+    #0f1f35 100%
+  );
+  --color-dark-gradient-darker: linear-gradient(
+    180deg,
+    #0a1a2e 0%,
+    #142a47 50%,
+    #081525 100%
+  );
+  --color-gradient-yellow-orange: linear-gradient(to right, #facc15, #f97316);
+  --color-gradient-yellow-orange-hover: linear-gradient(
+    to right,
+    #eab308,
+    #ea580c
+  );
 }
 
 @layer base {
@@ -134,9 +156,51 @@
   }
 }
 
-@layer components {
-  .gradient-heading {
-    @apply text-4xl font-bold bg-gradient-to-r from-yellow-600 to-yellow-500 dark:from-yellow-400 dark:to-orange-500 bg-clip-text text-transparent;
+@layer utilities {
+  .dark .gradient-blue {
+    background: var(--color-dark-gradient);
   }
-}
 
+  .dark .gradient-blue-darker {
+    background: var(--color-dark-gradient-darker);
+  }
+
+  /* .gradient-text {
+    background: var(--color-gradient-yellow-orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hover-gradient-text:hover {
+    background: var(--color-gradient-yellow-orange-hover);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-gradient-yellow-orange);
+  }
+
+  .inactive::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    width: 0;
+    height: 2px;
+    background: var(--color-gradient-yellow-orange);
+    transition: all 0.3s ease;  
+  }
+  .inactive:hover::after {
+    width: 100%;
+    left: 0;
+  } */
+}

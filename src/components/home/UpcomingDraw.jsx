@@ -51,13 +51,18 @@ const UpcomingDraw = () => {
       : "medium";
 
   return (
-    <section className="py-10 px-5 bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+    <section className="py-10 px-5 bg-secondary/50">
       <div className="text-center mb-10">
         <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="p-3 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full">
-            <Trophy className="text-black" />
-          </div>
-          <h2 className="gradient-heading">Live Prize Draws</h2>
+          <Button
+            className="rounded-full h-13 [&_svg:not([class*='size-'])]:size-7"
+            variant="accent"
+          >
+            <Trophy className="text-accent-foreground" />
+          </Button>
+          <h2 className="gradient-text text-5xl font-black">
+            Live <span className="text-accent">Prize Draws</span>
+          </h2>
         </div>
         <p className="max-w-2xl mx-auto text-muted-foreground">
           Don't miss your chance to win these incredible LEGO sets! Our next
@@ -112,7 +117,11 @@ const UpcomingDraw = () => {
               </div>
 
               <div>
-                <Button size="lg" variant="scaling">
+                <Button
+                  size="lg"
+                  variant="accent"
+                  className="w-full font-black text-xl"
+                >
                   🎯 ENTER DRAW NOW - ${currentDraw.price}
                 </Button>
               </div>
@@ -135,7 +144,7 @@ const UpcomingDraw = () => {
               className="cursor-pointer transition-all duration-300"
             >
               <Card
-                className={`p-5 ${
+                className={`p-5 gradient-blue-darker ${
                   currentIndex === index
                     ? "border-accent"
                     : "hover:border-accent/50"

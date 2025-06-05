@@ -16,7 +16,7 @@ const LotteryCard = ({ set, PARTS }) => {
 
   return (
     <Card
-      className="group hover:shadow-lg transition-shadow dark:border-none rounded-xl overflow-hidden p-0 gap-2 cursor-pointer"
+      className="group hover:shadow-lg overflow-hidden p-0 gap-2 cursor-pointer dark:border-none gradient-blue"
       onClick={handleCardClick}
     >
       <div className="relative aspect-square border-b overflow-hidden">
@@ -45,7 +45,7 @@ const LotteryCard = ({ set, PARTS }) => {
             <Box className="w-4 h-4" />
             <span>{set.pieces} pieces</span>
           </div>
-          <span className="text-emerald-500 font-bold text-lg">
+          <span className="text-emerald-500 font-bold text-xl">
             ${set.price.toFixed(2)}
           </span>
         </div>

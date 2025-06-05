@@ -9,12 +9,14 @@ const WhyChoose = ({ data, animations }) => {
     <section className="py-10 px-5 bg-secondary/50">
       {/* Header */}
       <motion.div {...headerAnimation} className="text-center mb-10">
-        <h2 className="text-3xl font-bold mb-3">{data.title}</h2>
+        <h2 className="text-5xl font-black mb-3">
+          Why Choose <span className="text-accent">Brick Draft?</span>
+        </h2>
         <p className="max-w-2xl mx-auto text-muted-foreground">
           {data.description}
         </p>
       </motion.div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
         {data.features.map((feature, index) => (
           <motion.div key={index} {...featureAnimation(index)}>

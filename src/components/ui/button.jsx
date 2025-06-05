@@ -21,6 +21,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-input/50 dark:hover:bg-input/50",
         link: "text-foreground underline-offset-4 hover:underline",
         accent: "bg-accent text-accent-foreground shadow-xs hover:bg-accent/90",
+        gradient:
+          "bg-gradient-to-r from-yellow-400 to-orange-500 text-accent-foreground",
         brand:
           "bg-primary text-background dark:bg-background dark:text-foreground border-none",
         legal:
